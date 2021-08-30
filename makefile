@@ -6,6 +6,7 @@ NAME ?= PNYEXPRS
 DESCRIPTION ?= "Pony Express CE"
 COMPRESSED ?= NO
 ARCHIVED ?= NO
+HAS_PRINTF := NO
 
 CFLAGS ?= -Wall -Wextra -Oz
 CXXFLAGS ?= -Wall -Wextra -Oz

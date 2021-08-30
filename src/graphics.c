@@ -1,5 +1,6 @@
 #include "graphics.h"
 #include "pony_express.h"
+#include "envelope.h"
 
 void initialize_graphics() {
     gfx_Begin();
@@ -44,11 +45,29 @@ void draw_game() {
 
     gfx_Line(0, 20, LCD_WIDTH, 20);
     gfx_Line(0, LCD_HEIGHT - 20, LCD_WIDTH, LCD_HEIGHT - 20);
+
+    char score_counter[17];
+
+    sprintf(score_counter, "score %i", score);
+
+    gfx_PrintStringXY(score_counter, 8, LCD_HEIGHT - 16);
     
+    // draw the background
     gfx_SetColor(0xab);
     for (int c = 0; c < MAX_LANES; c++) {
         gfx_FillRectangle(0, 21 + 40 * c, LCD_WIDTH, 38);
     }
+
+    // draw the player
     gfx_SetColor(0x6a);
-    gfx_FillRectangle(20, ((int) 22 + 40 * lane), 36, 36);
+    gfx_FillRectangle(PLAYER_X, ((int) 22 + 40 * lane), PLAYER_SIZE, PLAYER_SIZE);
+
+    // draw the envelopes
+    gfx_SetColor(0xff);
+    for (int c = 0; c < MAX_ENVELOPES; c++) {
+        struct Envelope* e = &(envelopes[c]);
+        if (!e->used) continue;
+        int draw_y = e->lane * 40 + 28;
+        gfx_FillRectangle(e->x, draw_y, ENVELOPE_WIDTH, ENVELOPE_HEIGHT);
+    }
 }

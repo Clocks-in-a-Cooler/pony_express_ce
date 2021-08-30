@@ -23,6 +23,7 @@ int main() {
                 break;
             // others to be added
         }
+        frames++;
 
         gfx_SwapDraw();
     }

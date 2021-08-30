@@ -1,4 +1,5 @@
 #include "customize_keys.h"
+#include <math.h>
 
 /*
     game state, controls, and updating the game, all conveniently in one file
@@ -38,10 +39,16 @@ extern long frames;
 #define clamp(a, upper, lower) min(max(a, lower), upper)
 
 #define MAX_LANES 5
-#define LANE_SWITCH_SPEED 0.1;
 extern float lane;
 extern int destination_lane;
 
 void update_menu();
 void start_game();
 void update_game();
+
+bool check_collision(int lane, int x, int width);
+
+#define MOVE_SPEED 3 // adjust as needed
+
+#define PLAYER_SIZE 36
+#define PLAYER_X    20
