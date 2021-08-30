@@ -6,6 +6,7 @@ bool running = true;
 
 enum Game_state game_state = MENU;
 int menu_option            = PLAY;
+int pause_menu_option      = CONTINUE;
 
 struct Controls player_controls = {
     .up   = kb_KeyUp,
@@ -45,11 +46,41 @@ void update_menu() {
     menu_option = menu_option < 0 ? (menu_option + MENU_OPTIONS_N) : (menu_option % MENU_OPTIONS_N);
 }
 
+void update_pause_menu() {
+    if (check_key_released(kb_KeyClear)) {
+        game_state = MENU;
+    }
+
+    if (check_key_released(kb_KeyEnter)) {
+        switch ((enum Pause_menu_options) pause_menu_option) {
+            case CONTINUE:
+                game_state = PLAYING;
+                break;
+            case EXIT_GAME:
+            case PAUSE_MENU_OPTIONS_N: // shouldn't happen, but if i don't include this the compiler will complain
+                game_state = MENU;
+                pause_menu_option = 0;
+                break;
+        }
+    }
+
+    if (check_key_pressed(kb_KeyUp)) {
+        pause_menu_option--;
+    }
+    if (check_key_pressed(kb_KeyDown)) {
+        pause_menu_option++;
+    }
+    pause_menu_option = pause_menu_option < 0 ? (pause_menu_option + PAUSE_MENU_OPTIONS_N) : (pause_menu_option % PAUSE_MENU_OPTIONS_N);
+}
+
 void start_game() {
     score  = 0;
     frames = 0;
 
     lane = destination_lane = STARTING_LANE;
+
+    clear_envelopes();
+    // remember to clear other obstacles, too
 
     game_state = PLAYING;
 }
@@ -59,7 +90,7 @@ void start_game() {
 
 void update_game() {
     if (check_key_released(kb_KeyClear)) {
-        game_state = MENU;
+        game_state = PAUSED;
     }
 
     if (check_key_pressed(player_controls.up)) {
@@ -95,7 +126,9 @@ void update_game() {
         }
     }
 
-    if (!(rand() % 50)) {
+    // gotta come up with a better way to generate envelopes...
+    // groups of envelopes? lines of envelopes?
+    if (!(rand() % 2) && !(frames % ENVELOPE_FREQUENCY)) {
         int lane = rand() % MAX_LANES;
         add_envelope(lane);
     }

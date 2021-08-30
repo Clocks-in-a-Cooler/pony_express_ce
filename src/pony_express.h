@@ -24,6 +24,14 @@ enum Menu_options {
 
 extern int menu_option;
 
+enum Pause_menu_options {
+    CONTINUE = 0,
+    EXIT_GAME,
+    PAUSE_MENU_OPTIONS_N
+};
+
+extern int pause_menu_option;
+
 struct Controls {
     kb_lkey_t up;
     kb_lkey_t down;
@@ -43,6 +51,7 @@ extern float lane;
 extern int destination_lane;
 
 void update_menu();
+void update_pause_menu();
 void start_game();
 void update_game();
 

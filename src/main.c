@@ -13,6 +13,7 @@ int main() {
         update_keypad();
         gfx_SetDrawBuffer();
         switch (game_state) {
+            case GAME_OVER: // once i have the game over thing decided upon, i'll give this one its own blocks
             case MENU:
                 update_menu();
                 draw_menu();
@@ -20,6 +21,10 @@ int main() {
             case PLAYING:
                 update_game();
                 draw_game();
+                break;
+            case PAUSED:
+                update_pause_menu();
+                draw_pause_menu();
                 break;
             // others to be added
         }

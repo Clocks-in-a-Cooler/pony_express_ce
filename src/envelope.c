@@ -26,3 +26,9 @@ void update_envelope(struct Envelope* envelope) {
     }
     envelope->used = envelope->x > -ENVELOPE_WIDTH && envelope->used;
 }
+
+void clear_envelopes() {
+    for (int c = 0; c < MAX_ENVELOPES; c++) {
+        envelopes[c].used = 0;
+    }
+}

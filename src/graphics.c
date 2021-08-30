@@ -38,6 +38,31 @@ void draw_menu() {
     }
 }
 
+char* PAUSE_MENU_OPTION_NAMES[PAUSE_MENU_OPTIONS_N] = {
+    "CONTINUE", "MENU"
+};
+
+void draw_pause_menu() {
+    draw_game();
+    gfx_SetColor(0x00);
+    gfx_FillRectangle(70, 90, 180, 60);
+    gfx_SetColor(0xff);
+    gfx_Rectangle(70, 90, 180, 60);
+    gfx_PrintStringXY("PAUSED", 78, 98);
+
+    for (int c = 0; c < PAUSE_MENU_OPTIONS_N; c++) {
+        uint8_t colour;
+        if (c == pause_menu_option) {
+            colour = check_key_held(kb_KeyEnter) ? 0xff : 0xf0;
+        } else {
+            colour = 0xe0;
+        }
+        gfx_SetColor(colour);
+        gfx_FillRectangle(78, 114 + c * 16, 164, 14);
+        gfx_PrintStringXY(PAUSE_MENU_OPTION_NAMES[c], 80, 114 + c * 16 + 3);
+    }
+}
+
 void draw_game() {
     gfx_FillScreen(0x00);
 
