@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
-#define ENVELOPE_WIDTH 37
-#define ENVELOPE_HEIGHT 23
+#define ENVELOPE_WIDTH 36
+#define ENVELOPE_HEIGHT 24
 
 struct Envelope {
     int x;
