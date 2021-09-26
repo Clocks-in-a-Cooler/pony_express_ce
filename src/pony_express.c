@@ -20,6 +20,8 @@ long frames = 0;
 float lane           = STARTING_LANE;
 int destination_lane = STARTING_LANE;
 
+int pose = 1;
+
 void update_menu() {
     if (check_key(kb_KeyClear) & KEY_RELEASED) {
         running = false;
@@ -124,6 +126,10 @@ void update_game() {
             e->used = false;
             score++;
         }
+    }
+
+    if (!(frames % 4)) {
+        pose = (pose + 1) % 8 + 1;
     }
 
     // gotta come up with a better way to generate envelopes...

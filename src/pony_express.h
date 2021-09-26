@@ -49,6 +49,7 @@ extern long frames;
 #define MAX_LANES 5
 extern float lane;
 extern int destination_lane;
+extern int pose;
 
 void update_menu();
 void update_pause_menu();

@@ -15,6 +15,7 @@ void initialize_graphics() {
     gfx_SetTextBGColor(BLACK);
     gfx_SetTextTransparentColor(BLACK);
     gfx_SetMonospaceFont(8);
+    gfx_SetTransparentColor(0); // the magenta we had earlier
 }
 
 void cleanup_graphics() {
@@ -71,6 +72,19 @@ void draw_pause_menu() {
 
 #define envelope_sprite ((gfx_sprite_t*) envelope_data)
 
+unsigned char* rider_sprites[10] = {
+    rider1_data,
+    rider2_data,
+    rider3_data,
+    rider4_data,
+    rider5_data,
+    rider6_data,
+    rider7_data,
+    rider8_data,
+    rider9_data,
+    rider10_data,
+};
+
 void draw_game() {
     gfx_FillScreen(BLACK);
 
@@ -84,17 +98,18 @@ void draw_game() {
     gfx_PrintUInt(score, 3);
     
     // draw the background
-    gfx_SetColor(0xab);
+    gfx_SetColor(0xe6);
     for (int c = 0; c < MAX_LANES; c++) {
         gfx_FillRectangle(0, 21 + 40 * c, LCD_WIDTH, 38);
     }
 
     // draw the player
-    gfx_SetColor(0x6a);
-    gfx_FillRectangle(PLAYER_X, ((int) 22 + 40 * lane), PLAYER_SIZE, PLAYER_SIZE);
+    // gfx_SetColor(0x6a);
+    // gfx_FillRectangle(PLAYER_X, ((int) 22 + 40 * lane), PLAYER_SIZE, PLAYER_SIZE);
+    gfx_SetTransparentColor(0);
+    gfx_TransparentSprite((gfx_sprite_t*) rider_sprites[pose], PLAYER_X, ((int) 22 + 40 * lane));
 
     // draw the envelopes
-    gfx_SetColor(WHITE);
     for (int c = 0; c < MAX_ENVELOPES; c++) {
         struct Envelope* e = &(envelopes[c]);
         if (!e->used) continue;
