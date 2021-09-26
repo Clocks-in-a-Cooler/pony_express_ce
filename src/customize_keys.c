@@ -3,6 +3,8 @@
 #define KEYS_N 57
 #define to_sk_key_t(group, offset) (group << 3 | offset)
 
+bool enter_key_released = false;
+
 short keys[KEYS_N];
 
 void init_keypad() {

@@ -8,6 +8,8 @@
 #define KEY_HELD     3
 #define KEY_RELEASED 4
 
+extern bool enter_key_released;
+
 void init_keypad();
 void update_keypad();
 
