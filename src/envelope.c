@@ -5,9 +5,10 @@ struct Envelope envelopes[MAX_ENVELOPES];
 
 void add_envelope(int lane) {
     struct Envelope e = {
-        .x    = LCD_WIDTH,
-        .lane = lane,
-        .used = true
+        .x     = LCD_WIDTH,
+        .lane  = lane,
+        .used  = true,
+        .phase = rand() % ENVELOPE_MAX_PHASE,
     };
 
     // ever wonder why the counters are named "c" and not "i"?
@@ -22,7 +23,10 @@ void add_envelope(int lane) {
 
 void update_envelope(struct Envelope* envelope) {
     if (envelope->used) {
-        envelope->x -= MOVE_SPEED;
+        envelope->x    -= MOVE_SPEED;
+        if (!(frames % 4)) {
+            envelope->phase = (envelope->phase + 1) % ENVELOPE_MAX_PHASE;
+        }
     }
     envelope->used = envelope->x > -ENVELOPE_WIDTH && envelope->used;
 }

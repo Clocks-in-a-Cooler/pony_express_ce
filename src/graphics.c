@@ -72,16 +72,11 @@ void draw_pause_menu() {
 
 #define envelope_sprite ((gfx_sprite_t*) envelope_data)
 
-unsigned char* rider_sprites[10] = {
+unsigned char* rider_sprites[5] = {
     rider1_data,
     rider2_data,
-    rider3_data,
     rider4_data,
-    rider5_data,
     rider6_data,
-    rider7_data,
-    rider8_data,
-    rider9_data,
     rider10_data,
 };
 
@@ -104,17 +99,43 @@ void draw_game() {
     }
 
     // draw the player
-    // gfx_SetColor(0x6a);
-    // gfx_FillRectangle(PLAYER_X, ((int) 22 + 40 * lane), PLAYER_SIZE, PLAYER_SIZE);
     gfx_SetTransparentColor(0);
-    gfx_TransparentSprite((gfx_sprite_t*) rider_sprites[pose], PLAYER_X, ((int) 22 + 40 * lane));
+    int draw_y = (int) 22 + 40 * lane;
+
+    gfx_sprite_t* rider_sprite;
+    switch (pose) {
+        case 1:
+        case 2:
+            rider_sprite = (gfx_sprite_t*) rider_sprites[1];
+            break;
+        case 3:
+        case 4:
+        case 8:
+            rider_sprite = (gfx_sprite_t*) rider_sprites[2];
+            draw_y--;
+            break;
+        case 5:
+        case 6:
+        case 7:
+            rider_sprite = (gfx_sprite_t*) rider_sprites[3];
+            draw_y -= 2;
+            break;
+        default:
+            rider_sprite = (gfx_sprite_t*) rider_sprites[0];
+    }
+    gfx_TransparentSprite(rider_sprite, PLAYER_X, draw_y);
 
     // draw the envelopes
     for (int c = 0; c < MAX_ENVELOPES; c++) {
         struct Envelope* e = &(envelopes[c]);
         if (!e->used) continue;
         int draw_y = e->lane * 40 + 28;
-        // gfx_FillRectangle(e->x, draw_y, ENVELOPE_WIDTH, ENVELOPE_HEIGHT);
+        if (e->phase < 3) {
+            draw_y--;
+        }
+        if (e->phase >= 6 && e->phase < 9) {
+            draw_y++;
+        }
         gfx_Sprite(envelope_sprite, e->x, draw_y);
     }
 }

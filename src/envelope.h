@@ -6,6 +6,7 @@
 struct Envelope {
     int x;
     int lane;
+    int phase;
     bool used;
 };
 
@@ -17,3 +18,4 @@ void update_envelope(struct Envelope* envelope);
 void clear_envelopes();
 
 #define ENVELOPE_FREQUENCY 25
+#define ENVELOPE_MAX_PHASE 12
