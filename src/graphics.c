@@ -2,6 +2,7 @@
 #include "pony_express.h"
 #include "envelope.h"
 #include "gfx/sprites.h"
+#include "font/font.h"
 
 #define WHITE 9
 #define BLACK 1
@@ -11,10 +12,10 @@ void initialize_graphics() {
 
     gfx_SetPalette(global_palette, sizeof_global_palette, 0);
 
-    gfx_SetTextFGColor(WHITE);
-    gfx_SetTextBGColor(BLACK);
-    gfx_SetTextTransparentColor(BLACK);
-    gfx_SetMonospaceFont(8);
+    fontlib_SetFont(oldie_font, 0);
+    fontlib_SetForegroundColor(WHITE);
+    fontlib_SetBackgroundColor(BLACK);
+    fontlib_SetTransparency(true);
     gfx_SetTransparentColor(0); // the magenta we had earlier
 }
 
@@ -30,7 +31,8 @@ void draw_menu() {
     // no fancy stuff for now, because TheAyeStride needs a break...
     // don't want to overwhelm them with more unfinished projects
     gfx_FillScreen(BLACK);
-    gfx_PrintStringXY("PONY EXPRESS CE", 8, 8);
+    fontlib_SetCursorPosition(8, 8);
+    fontlib_DrawString("PONY EXPRESS CE");
 
     for (int c = 0; c < MENU_OPTIONS_N; c++) {
         uint8_t colour;
@@ -41,7 +43,8 @@ void draw_menu() {
         }
         gfx_SetColor(colour);
         gfx_FillRectangle(8, 160 + c * 16, 80, 14);
-        gfx_PrintStringXY(MENU_OPTION_NAMES[c], 10, 160 + c * 16 + 3);
+        fontlib_SetCursorPosition(10, 160 + c * 16 + 3);
+        fontlib_DrawString(MENU_OPTION_NAMES[c]);
     }
 }
 
@@ -55,7 +58,8 @@ void draw_pause_menu() {
     gfx_FillRectangle(70, 90, 180, 60);
     gfx_SetColor(WHITE);
     gfx_Rectangle(70, 90, 180, 60);
-    gfx_PrintStringXY("PAUSED", 78, 98);
+    fontlib_SetCursorPosition(78, 98);
+    fontlib_DrawString("PAUSED");
 
     for (int c = 0; c < PAUSE_MENU_OPTIONS_N; c++) {
         uint8_t colour;
@@ -66,7 +70,8 @@ void draw_pause_menu() {
         }
         gfx_SetColor(colour);
         gfx_FillRectangle(78, 114 + c * 16, 164, 14);
-        gfx_PrintStringXY(PAUSE_MENU_OPTION_NAMES[c], 80, 114 + c * 16 + 3);
+        fontlib_SetCursorPosition(80, 114 + c * 16 + 3);
+        fontlib_DrawString(PAUSE_MENU_OPTION_NAMES[c]);
     }
 }
 
@@ -89,8 +94,9 @@ void draw_game() {
     gfx_Line(0, LCD_HEIGHT - 20, LCD_WIDTH, LCD_HEIGHT - 20);
 
     // thanks, commandblockguy, LogicalJoe!
-    gfx_PrintStringXY("score ", 8, LCD_HEIGHT - 16);
-    gfx_PrintUInt(score, 3);
+    fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
+    fontlib_DrawString("SCORE ");
+    fontlib_DrawUInt(score, 3);
     
     // draw the background
     gfx_SetColor(0xe6);
