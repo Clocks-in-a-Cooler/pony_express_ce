@@ -4,8 +4,9 @@
 #include "gfx/sprites.h"
 #include "font/font.h"
 
-#define WHITE 9
-#define BLACK 1
+#define WHITE 1
+#define BLACK 2
+#define YELLOW 3
 
 void initialize_graphics() {
     gfx_Begin();
@@ -27,6 +28,16 @@ char* MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
     "PLAY", "EXIT"
 };
 
+const gfx_sprite_t* BUTTON_SPRITE = (gfx_sprite_t*) button_data;
+
+#define TEXT_HEIGHT          8
+#define MENU_BUTTON_Y_OFFSET 160
+#define MENU_BUTTON_X_OFFSET 10
+#define MENU_LABEL_X_OFFSET  8
+#define MENU_LABEL_Y_OFFSET  3
+#define MENU_BUTTON_HEIGHT   16
+#define MENU_BUTTON_WIDTH    96
+
 void draw_menu() {
     // no fancy stuff for now, because TheAyeStride needs a break...
     // don't want to overwhelm them with more unfinished projects
@@ -35,43 +46,52 @@ void draw_menu() {
     fontlib_DrawString("PONY EXPRESS CE");
 
     for (int c = 0; c < MENU_OPTIONS_N; c++) {
-        uint8_t colour;
         if (c == menu_option) {
-            colour = (check_key(kb_KeyEnter) & KEY_HELD) ? WHITE : 0xf0;
-        } else {
-            colour = 0xe0;
+            // probably look terrible
+            fontlib_SetForegroundColor(check_key(kb_KeyEnter) & KEY_HELD ? WHITE : YELLOW);
         }
-        gfx_SetColor(colour);
-        gfx_FillRectangle(8, 160 + c * 16, 80, 14);
-        fontlib_SetCursorPosition(10, 160 + c * 16 + 3);
+
+        gfx_TransparentSprite(BUTTON_SPRITE, MENU_BUTTON_X_OFFSET, MENU_BUTTON_Y_OFFSET + c * MENU_BUTTON_HEIGHT);
+        fontlib_SetCursorPosition(MENU_BUTTON_X_OFFSET + MENU_LABEL_X_OFFSET, MENU_BUTTON_Y_OFFSET + c * MENU_BUTTON_HEIGHT + MENU_LABEL_Y_OFFSET);
         fontlib_DrawString(MENU_OPTION_NAMES[c]);
+
+        fontlib_SetForegroundColor(WHITE);
     }
 }
 
-char* PAUSE_MENU_OPTION_NAMES[PAUSE_MENU_OPTIONS_N] = {
+const char* PAUSE_MENU_OPTION_NAMES[PAUSE_MENU_OPTIONS_N] = {
     "CONTINUE", "MENU"
 };
+
+#define PAUSE_MENU_X_PADDING 8
+#define PAUSE_MENU_Y_PADDING 4
+#define PAUSE_MENU_WIDTH     (MENU_BUTTON_WIDTH + 2 * PAUSE_MENU_X_PADDING)
+#define PAUSE_MENU_HEIGHT    (MENU_BUTTON_HEIGHT * (PAUSE_MENU_OPTIONS_N + 1) + 2 * PAUSE_MENU_Y_PADDING)
+
+// center the pause menu on-screen
+#define PAUSE_MENU_X_OFFSET ((LCD_WIDTH - PAUSE_MENU_WIDTH) / 2)
+#define PAUSE_MENU_Y_OFFSET ((LCD_HEIGHT - PAUSE_MENU_HEIGHT) / 2)
 
 void draw_pause_menu() {
     draw_game();
     gfx_SetColor(BLACK);
-    gfx_FillRectangle(70, 90, 180, 60);
+    gfx_FillRectangle_NoClip(PAUSE_MENU_X_OFFSET, PAUSE_MENU_Y_OFFSET, PAUSE_MENU_WIDTH, PAUSE_MENU_HEIGHT);
     gfx_SetColor(WHITE);
-    gfx_Rectangle(70, 90, 180, 60);
-    fontlib_SetCursorPosition(78, 98);
+    gfx_Rectangle_NoClip(PAUSE_MENU_X_OFFSET, PAUSE_MENU_Y_OFFSET, PAUSE_MENU_WIDTH, PAUSE_MENU_HEIGHT);
+    fontlib_SetCursorPosition(PAUSE_MENU_X_OFFSET + PAUSE_MENU_X_PADDING, PAUSE_MENU_Y_OFFSET + PAUSE_MENU_Y_PADDING);
     fontlib_DrawString("PAUSED");
 
     for (int c = 0; c < PAUSE_MENU_OPTIONS_N; c++) {
-        uint8_t colour;
         if (c == pause_menu_option) {
-            colour = check_key_held(kb_KeyEnter) ? WHITE : 0xf0;
-        } else {
-            colour = 0xe0;
+            fontlib_SetForegroundColor(check_key(kb_KeyEnter) & KEY_HELD ? WHITE : YELLOW);
         }
-        gfx_SetColor(colour);
-        gfx_FillRectangle(78, 114 + c * 16, 164, 14);
-        fontlib_SetCursorPosition(80, 114 + c * 16 + 3);
+        int draw_x = PAUSE_MENU_X_OFFSET + PAUSE_MENU_X_PADDING;
+        int draw_y = PAUSE_MENU_Y_OFFSET + PAUSE_MENU_Y_PADDING + (c + 1) * MENU_BUTTON_HEIGHT;
+        
+        gfx_TransparentSprite_NoClip(BUTTON_SPRITE, draw_x, draw_y);
+        fontlib_SetCursorPosition(draw_x + MENU_LABEL_X_OFFSET, draw_y + MENU_LABEL_Y_OFFSET);
         fontlib_DrawString(PAUSE_MENU_OPTION_NAMES[c]);
+        fontlib_SetForegroundColor(WHITE);
     }
 }
 

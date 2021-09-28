@@ -1,10 +1,10 @@
 SplineFontDB: 3.2
-FontName: OldieCE
-FullName: Oldie CE
+FontName: OldieCEBold
+FullName: OldieCE Bold
 FamilyName: OldieCE
 Weight: Bold
 Copyright: Copyright (c) 2021, Clocks-in-a-cooler
-UComments: "2021-9-26: Created with FontForge (http://fontforge.org)"
+UComments: "2021-9-27: Created with FontForge (http://fontforge.org)"
 Version: 001.000
 ItalicAngle: 0
 UnderlinePosition: -100
@@ -15,12 +15,12 @@ InvalidEm: 0
 LayerCount: 2
 Layer: 0 0 "Back" 1
 Layer: 1 0 "Fore" 0
-XUID: [1021 854 -1119921295 15244647]
+XUID: [1021 854 -1119921295 9003113]
 OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
-CreationTime: 1632708874
-ModificationTime: 1632711083
+CreationTime: 1632792730
+ModificationTime: 1632792763
 PfmFamily: 33
 TTFWeight: 700
 TTFWidth: 5
@@ -40,2326 +40,2322 @@ HheadAOffset: 1
 HheadDescent: 0
 HheadDOffset: 1
 OS2Vendor: 'PfEd'
-MarkAttachClasses: 1
 DEI: 91125
-LangName: 1033
 Encoding: win
 UnicodeInterp: none
 NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 0 70 20
+WinInfo: 0 76 21
 OnlyBitmaps: 1
-BeginPrivate: 0
-EndPrivate
 BeginChars: 256 256
 
 StartChar: uni0000
 Encoding: 0 0 0
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0001
 Encoding: 1 1 1
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0002
 Encoding: 2 2 2
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0003
 Encoding: 3 3 3
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0004
 Encoding: 4 4 4
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0005
 Encoding: 5 5 5
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0006
 Encoding: 6 6 6
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0007
 Encoding: 7 7 7
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0008
 Encoding: 8 8 8
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0009
 Encoding: 9 9 9
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni000A
 Encoding: 10 10 10
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni000B
 Encoding: 11 11 11
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni000C
 Encoding: 12 12 12
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni000D
 Encoding: 13 13 13
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni000E
 Encoding: 14 14 14
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni000F
 Encoding: 15 15 15
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0010
 Encoding: 16 16 16
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0011
 Encoding: 17 17 17
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0012
 Encoding: 18 18 18
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0013
 Encoding: 19 19 19
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0014
 Encoding: 20 20 20
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0015
 Encoding: 21 21 21
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0016
 Encoding: 22 22 22
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0017
 Encoding: 23 23 23
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0018
 Encoding: 24 24 24
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni0019
 Encoding: 25 25 25
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni001A
 Encoding: 26 26 26
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni001B
 Encoding: 27 27 27
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni001C
 Encoding: 28 28 28
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni001D
 Encoding: 29 29 29
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni001E
 Encoding: 30 30 30
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni001F
 Encoding: 31 31 31
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: space
 Encoding: 32 32 32
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: exclam
 Encoding: 33 33 33
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quotedbl
 Encoding: 34 34 34
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: numbersign
 Encoding: 35 35 35
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: dollar
 Encoding: 36 36 36
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: percent
 Encoding: 37 37 37
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ampersand
 Encoding: 38 38 38
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quotesingle
 Encoding: 39 39 39
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: parenleft
 Encoding: 40 40 40
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: parenright
 Encoding: 41 41 41
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: asterisk
 Encoding: 42 42 42
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: plus
 Encoding: 43 43 43
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: comma
 Encoding: 44 44 44
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: hyphen
 Encoding: 45 45 45
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: period
 Encoding: 46 46 46
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: slash
 Encoding: 47 47 47
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: zero
 Encoding: 48 48 48
-Width: 538
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: one
 Encoding: 49 49 49
-Width: 384
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: two
 Encoding: 50 50 50
-Width: 538
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: three
 Encoding: 51 51 51
-Width: 538
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: four
 Encoding: 52 52 52
-Width: 538
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: five
 Encoding: 53 53 53
-Width: 538
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: six
 Encoding: 54 54 54
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: seven
 Encoding: 55 55 55
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: eight
 Encoding: 56 56 56
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: nine
 Encoding: 57 57 57
-Width: 538
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: colon
 Encoding: 58 58 58
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: semicolon
 Encoding: 59 59 59
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: less
 Encoding: 60 60 60
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: equal
 Encoding: 61 61 61
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: greater
 Encoding: 62 62 62
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: question
 Encoding: 63 63 63
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: at
 Encoding: 64 64 64
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: A
 Encoding: 65 65 65
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: B
 Encoding: 66 66 66
-Width: 692
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: C
 Encoding: 67 67 67
-Width: 615
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: D
 Encoding: 68 68 68
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: E
 Encoding: 69 69 69
-Width: 615
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: F
 Encoding: 70 70 70
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: G
 Encoding: 71 71 71
-Width: 692
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: H
 Encoding: 72 72 72
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: I
 Encoding: 73 73 73
-Width: 384
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: J
 Encoding: 74 74 74
-Width: 615
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: K
 Encoding: 75 75 75
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: L
 Encoding: 76 76 76
-Width: 615
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: M
 Encoding: 77 77 77
-Width: 846
+Width: 1625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: N
 Encoding: 78 78 78
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: O
 Encoding: 79 79 79
-Width: 692
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: P
 Encoding: 80 80 80
-Width: 615
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Q
 Encoding: 81 81 81
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: R
 Encoding: 82 82 82
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: S
 Encoding: 83 83 83
-Width: 615
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: T
 Encoding: 84 84 84
-Width: 615
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: U
 Encoding: 85 85 85
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: V
 Encoding: 86 86 86
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: W
 Encoding: 87 87 87
-Width: 846
+Width: 1625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: X
 Encoding: 88 88 88
-Width: 692
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Y
 Encoding: 89 89 89
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Z
 Encoding: 90 90 90
-Width: 692
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: bracketleft
 Encoding: 91 91 91
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: backslash
 Encoding: 92 92 92
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: bracketright
 Encoding: 93 93 93
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: asciicircum
 Encoding: 94 94 94
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: underscore
 Encoding: 95 95 95
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: grave
 Encoding: 96 96 96
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: a
 Encoding: 97 97 97
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: b
 Encoding: 98 98 98
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: c
 Encoding: 99 99 99
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: d
 Encoding: 100 100 100
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: e
 Encoding: 101 101 101
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: f
 Encoding: 102 102 102
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: g
 Encoding: 103 103 103
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: h
 Encoding: 104 104 104
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: i
 Encoding: 105 105 105
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: j
 Encoding: 106 106 106
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: k
 Encoding: 107 107 107
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: l
 Encoding: 108 108 108
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: m
 Encoding: 109 109 109
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: n
 Encoding: 110 110 110
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: o
 Encoding: 111 111 111
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: p
 Encoding: 112 112 112
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: q
 Encoding: 113 113 113
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: r
 Encoding: 114 114 114
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: s
 Encoding: 115 115 115
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: t
 Encoding: 116 116 116
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: u
 Encoding: 117 117 117
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: v
 Encoding: 118 118 118
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: w
 Encoding: 119 119 119
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: x
 Encoding: 120 120 120
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: y
 Encoding: 121 121 121
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: z
 Encoding: 122 122 122
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: braceleft
 Encoding: 123 123 123
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: bar
 Encoding: 124 124 124
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: braceright
 Encoding: 125 125 125
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: asciitilde
 Encoding: 126 126 126
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni007F
 Encoding: 127 127 127
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Euro
 Encoding: 128 8364 128
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: NameMe.129
 Encoding: 129 -1 129
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quotesinglbase
 Encoding: 130 8218 130
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: florin
 Encoding: 131 402 131
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quotedblbase
 Encoding: 132 8222 132
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ellipsis
 Encoding: 133 8230 133
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: dagger
 Encoding: 134 8224 134
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: daggerdbl
 Encoding: 135 8225 135
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: circumflex
 Encoding: 136 710 136
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: perthousand
 Encoding: 137 8240 137
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Scaron
 Encoding: 138 352 138
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: guilsinglleft
 Encoding: 139 8249 139
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: OE
 Encoding: 140 338 140
-Width: 769
+Width: 1625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: NameMe.141
 Encoding: 141 -1 141
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Zcaron
 Encoding: 142 381 142
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: NameMe.143
 Encoding: 143 -1 143
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: NameMe.144
 Encoding: 144 -1 144
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quoteleft
 Encoding: 145 8216 145
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quoteright
 Encoding: 146 8217 146
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quotedblleft
 Encoding: 147 8220 147
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: quotedblright
 Encoding: 148 8221 148
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: bullet
 Encoding: 149 8226 149
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: endash
 Encoding: 150 8211 150
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: emdash
 Encoding: 151 8212 151
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: tilde
 Encoding: 152 732 152
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: trademark
 Encoding: 153 8482 153
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: scaron
 Encoding: 154 353 154
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: guilsinglright
 Encoding: 155 8250 155
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: oe
 Encoding: 156 339 156
-Width: 769
+Width: 1625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: NameMe.157
 Encoding: 157 -1 157
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: zcaron
 Encoding: 158 382 158
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ydieresis
 Encoding: 159 376 159
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni00A0
 Encoding: 160 160 160
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: exclamdown
 Encoding: 161 161 161
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: cent
 Encoding: 162 162 162
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: sterling
 Encoding: 163 163 163
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: currency
 Encoding: 164 164 164
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: yen
 Encoding: 165 165 165
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: brokenbar
 Encoding: 166 166 166
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: section
 Encoding: 167 167 167
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: dieresis
 Encoding: 168 168 168
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: copyright
 Encoding: 169 169 169
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ordfeminine
 Encoding: 170 170 170
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: guillemotleft
 Encoding: 171 171 171
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: logicalnot
 Encoding: 172 172 172
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni00AD
 Encoding: 173 173 173
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: registered
 Encoding: 174 174 174
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: macron
 Encoding: 175 175 175
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: degree
 Encoding: 176 176 176
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: plusminus
 Encoding: 177 177 177
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni00B2
 Encoding: 178 178 178
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni00B3
 Encoding: 179 179 179
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: acute
 Encoding: 180 180 180
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: mu
 Encoding: 181 181 181
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: paragraph
 Encoding: 182 182 182
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: periodcentered
 Encoding: 183 183 183
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: cedilla
 Encoding: 184 184 184
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uni00B9
 Encoding: 185 185 185
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ordmasculine
 Encoding: 186 186 186
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: guillemotright
 Encoding: 187 187 187
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: onequarter
 Encoding: 188 188 188
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: onehalf
 Encoding: 189 189 189
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: threequarters
 Encoding: 190 190 190
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: questiondown
 Encoding: 191 191 191
-Width: 769
+Width: 625
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Agrave
 Encoding: 192 192 192
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Aacute
 Encoding: 193 193 193
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Acircumflex
 Encoding: 194 194 194
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Atilde
 Encoding: 195 195 195
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Adieresis
 Encoding: 196 196 196
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Aring
 Encoding: 197 197 197
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: AE
 Encoding: 198 198 198
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ccedilla
 Encoding: 199 199 199
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Egrave
 Encoding: 200 200 200
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Eacute
 Encoding: 201 201 201
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ecircumflex
 Encoding: 202 202 202
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Edieresis
 Encoding: 203 203 203
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Igrave
 Encoding: 204 204 204
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Iacute
 Encoding: 205 205 205
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Icircumflex
 Encoding: 206 206 206
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Idieresis
 Encoding: 207 207 207
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Eth
 Encoding: 208 208 208
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ntilde
 Encoding: 209 209 209
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ograve
 Encoding: 210 210 210
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Oacute
 Encoding: 211 211 211
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ocircumflex
 Encoding: 212 212 212
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Otilde
 Encoding: 213 213 213
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Odieresis
 Encoding: 214 214 214
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: multiply
 Encoding: 215 215 215
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Oslash
 Encoding: 216 216 216
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ugrave
 Encoding: 217 217 217
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Uacute
 Encoding: 218 218 218
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Ucircumflex
 Encoding: 219 219 219
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Udieresis
 Encoding: 220 220 220
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Yacute
 Encoding: 221 221 221
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: Thorn
 Encoding: 222 222 222
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: germandbls
 Encoding: 223 223 223
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: agrave
 Encoding: 224 224 224
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: aacute
 Encoding: 225 225 225
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: acircumflex
 Encoding: 226 226 226
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: atilde
 Encoding: 227 227 227
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: adieresis
 Encoding: 228 228 228
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: aring
 Encoding: 229 229 229
-Width: 769
+Width: 1000
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ae
 Encoding: 230 230 230
-Width: 769
+Width: 1500
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ccedilla
 Encoding: 231 231 231
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: egrave
 Encoding: 232 232 232
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: eacute
 Encoding: 233 233 233
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ecircumflex
 Encoding: 234 234 234
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: edieresis
 Encoding: 235 235 235
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: igrave
 Encoding: 236 236 236
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: iacute
 Encoding: 237 237 237
-Width: 769
+Width: 750
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: icircumflex
 Encoding: 238 238 238
-Width: 769
+Width: 875
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: idieresis
 Encoding: 239 239 239
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: eth
 Encoding: 240 240 240
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ntilde
 Encoding: 241 241 241
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ograve
 Encoding: 242 242 242
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: oacute
 Encoding: 243 243 243
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ocircumflex
 Encoding: 244 244 244
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: otilde
 Encoding: 245 245 245
-Width: 769
+Width: 1250
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: odieresis
 Encoding: 246 246 246
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: divide
 Encoding: 247 247 247
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: oslash
 Encoding: 248 248 248
-Width: 769
+Width: 1375
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ugrave
 Encoding: 249 249 249
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: uacute
 Encoding: 250 250 250
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ucircumflex
 Encoding: 251 251 251
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: udieresis
 Encoding: 252 252 252
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: yacute
 Encoding: 253 253 253
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: thorn
 Encoding: 254 254 254
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 
 StartChar: ydieresis
 Encoding: 255 255 255
-Width: 769
+Width: 1125
 Flags: W
 LayerCount: 2
 EndChar
 EndChars
-BitmapFont: 13 257 10 3 1
+BitmapFont: 8 256 6 2 1
 Resolution: 96
-BDFChar: 0 0 10 8 8 -3 -3
+BDFChar: 0 0 10 9 9 0 0
 z
-BDFChar: 1 1 10 0 7 -2 10
-W`?'!W`?'!W`?'!WW3#!
-BDFChar: 2 2 10 1 2 -2 10
-^qdb$^qdb$^qdb$^]4?7
-BDFChar: 3 3 10 0 7 -2 0
-s8W*!
-BDFChar: 4 4 10 0 7 -2 10
-s8W-!s8W-!s8W-!rr<$!
-BDFChar: 5 5 10 0 7 -2 10
-s8V9"J`l4ZkND%.rr<$!
-BDFChar: 6 6 10 0 7 -2 10
-s8V9"R@/VoR@0KCrr<$!
-BDFChar: 7 7 10 0 7 -2 10
-s8W-!_th-:R@1nkrr<$!
-BDFChar: 8 8 10 0 7 -2 10
-s2+g:z!!!#:rr<$!
-BDFChar: 9 9 10 0 7 -2 10
-s2,[9IM`n=(`4+-rr<$!
-BDFChar: 10 10 10 0 7 -2 10
-s2,[9AnHL(AnD%\rr<$!
-BDFChar: 11 11 10 0 7 -2 10
-s2+g:49du]Aj-44rr<$!
-BDFChar: 12 12 10 1 7 4 8
-&3,(:rVuou
-BDFChar: 13 13 10 1 7 -1 3
-rr.:)&-)\1
-BDFChar: 14 14 10 2 7 0 8
-$lhBWr-UUH$ig8-
-BDFChar: 15 15 10 1 6 0 8
-^u4_Wr:od>^]4?7
-BDFChar: 16 16 10 1 6 0 8
-0R3LL0JG170E;(Q
-BDFChar: 17 17 10 1 6 0 8
-0JG170JNEL0E;(Q
-BDFChar: 18 18 10 1 7 2 6
+BDFChar: 1 1 11 0 7 0 7
+<N9'!<N9'!
+BDFChar: 2 2 5 0 1 0 7
+^qdb$^qdb$
+BDFChar: 3 3 11 0 7 0 0
+rr<$!
+BDFChar: 4 4 11 0 7 0 7
+s8W-!s8W-!
+BDFChar: 5 5 11 0 7 0 7
+_h%"6kND$k
+BDFChar: 6 6 11 0 7 0 7
+_jQpDR@0J2
+BDFChar: 7 7 11 0 7 0 7
+s24ZKR@0JZ
+BDFChar: 8 8 10 9 9 0 0
+z
+BDFChar: 9 9 9 0 5 0 7
+Gl06L0JG17
+BDFChar: 10 10 9 0 5 1 7
+Gg+D0bfn92
+BDFChar: 11 11 9 0 5 1 6
+GRSuDb^9Bj
+BDFChar: 12 12 10 0 6 4 7
+3.1`)
+BDFChar: 13 13 10 0 6 0 3
+rr.:)
+BDFChar: 14 14 9 0 5 0 7
+*'AWHHorAW
+BDFChar: 15 15 9 0 5 0 7
+i:-O>q!d4W
+BDFChar: 16 16 9 0 5 0 7
+Gl06L0JG17
+BDFChar: 17 17 9 0 5 0 7
+0JG170`6/L
+BDFChar: 18 18 10 0 6 2 6
 0OXlf0E;(Q
-BDFChar: 19 19 10 1 7 2 6
+BDFChar: 19 19 10 0 6 2 6
 (_$BP(]XO9
-BDFChar: 20 20 10 0 7 2 6
+BDFChar: 20 20 11 0 7 2 6
 ,\I'g,QIfE
-BDFChar: 21 21 10 1 7 1 7
+BDFChar: 21 21 10 0 6 1 7
 3(/@MJj_Qu
-BDFChar: 22 22 10 1 7 1 7
+BDFChar: 22 22 10 0 6 1 7
 3.1`)rd6[*
-BDFChar: 23 23 10 0 7 -3 8
-%N??((`4),(tdJ[
-BDFChar: 24 24 10 0 6 0 8
-rWWQ2IKfu\rVuou
-BDFChar: 25 25 10 0 6 0 8
-`l?$tCi!oI2uipY
-BDFChar: 26 26 10 0 5 1 6
+BDFChar: 23 23 8 0 4 0 7
+f\"!T^qdb$
+BDFChar: 24 24 10 0 6 0 7
+"pP9\"pP;2
+BDFChar: 25 25 10 0 6 0 7
+`lA!oChu'j
+BDFChar: 26 26 9 0 5 1 6
 0JEJ,bfg%e
-BDFChar: 27 27 10 0 9 -2 9
-!5JTM!It3$!It7PirJ*>2?5W8)uprY
-BDFChar: 28 28 10 0 5 0 6
+BDFChar: 27 27 12 0 8 0 7
+!It3$!It7PirJ*>2?5W8
+BDFChar: 28 28 9 0 5 0 6
 *,r]4*!#m:
-BDFChar: 29 29 10 0 5 1 6
+BDFChar: 29 29 9 0 5 1 6
 @'gbYZkrcC
-BDFChar: 30 30 10 0 5 0 6
+BDFChar: 30 30 9 0 5 0 6
 i&D-)huNZT
-BDFChar: 31 31 10 0 5 0 7
+BDFChar: 31 31 9 0 5 0 7
 (`<0)0`5<d
-BDFChar: 32 32 10 3 3 -3 -3
+BDFChar: 32 32 10 9 9 0 0
 z
-BDFChar: 33 33 10 0 1 0 8
-^qdb$^q]rc^]4?7
-BDFChar: 34 34 10 0 4 6 9
-f\"hQ
-BDFChar: 35 35 10 0 8 0 8
-)ZUfWIt0EW2?5W8rr?j8C]FG8
-BDFChar: 36 36 10 0 6 -2 10
-(`7YOda3@WQI^F;0E;(Q
-BDFChar: 37 37 10 0 5 0 8
-bfgn@0OS;4bQ%VC
-BDFChar: 38 38 10 0 6 0 8
-3,ECjG21<cFoVLB
-BDFChar: 39 39 10 0 2 6 9
-?smBX
-BDFChar: 40 40 10 0 3 -1 8
-0OS;(^qd`n?n_Q\
-BDFChar: 41 41 10 0 3 -1 8
-^gLP(0JG1g@))aB
-BDFChar: 42 42 10 0 4 3 9
-+K5'Spo#;8
-BDFChar: 43 43 10 0 5 2 6
+BDFChar: 33 33 5 0 1 0 7
+^qdb$^];0c
+BDFChar: 34 34 8 0 4 6 7
+fMDPJ
+BDFChar: 35 35 12 0 8 0 7
+)ZYA<2?5W82?<aWC]J8O
+BDFChar: 36 36 10 0 6 0 7
+f$_om(7*O!
+BDFChar: 37 37 9 0 5 0 7
+bSV0N?sq4&
+BDFChar: 38 38 10 0 6 0 7
+Chu(Sgs!uc
+BDFChar: 39 39 6 0 2 6 7
+@))aB
+BDFChar: 40 40 6 0 2 0 7
+?spdc^qa>c
+BDFChar: 41 41 6 0 2 0 7
+^qa>c?spdc
+BDFChar: 42 42 8 0 4 3 7
+pi-#,+92BA
+BDFChar: 43 43 9 0 5 2 6
 0JNDY0E;(Q
-BDFChar: 44 44 10 0 2 -2 1
-?smBX
-BDFChar: 45 45 10 0 3 3 3
-n,NFg
-BDFChar: 46 46 10 0 1 0 1
+BDFChar: 44 44 5 0 1 0 1
 ^q]pM
-BDFChar: 47 47 10 0 5 0 8
-$k*si0OS;(^]4?7
-BDFChar: 48 48 7 0 5 0 7
+BDFChar: 45 45 7 0 3 3 3
+n,NFg
+BDFChar: 46 46 5 0 1 0 1
+^q]pM
+BDFChar: 47 47 9 0 5 0 7
+$lBg8?spdc
+BDFChar: 48 48 9 0 5 0 7
 Gg+CUbfn:U
-BDFChar: 49 49 5 0 3 0 7
+BDFChar: 49 49 7 0 3 0 7
 @,PF#?smC3
-BDFChar: 50 50 7 0 5 0 8
-!4^5i0OViCqu?]s
-BDFChar: 51 51 7 0 5 0 7
+BDFChar: 50 50 9 0 5 0 7
+YfIY8@)U:e
+BDFChar: 51 51 9 0 5 0 7
 \BG@@$k1@i
-BDFChar: 52 52 7 0 5 0 7
+BDFChar: 52 52 9 0 5 0 7
 (cYWbr"p85
-BDFChar: 53 53 7 0 5 0 7
+BDFChar: 53 53 9 0 5 0 7
 prL8G$k1@i
-BDFChar: 54 54 10 0 5 0 7
+BDFChar: 54 54 7 0 5 0 7
 B\:,qbfn:U
-BDFChar: 55 55 10 0 5 0 7
+BDFChar: 55 55 7 0 5 0 7
 r/;I0(bdXg
-BDFChar: 56 56 10 0 5 0 7
+BDFChar: 56 56 7 0 5 0 7
 Gg+BVbfn:U
 BDFChar: 57 57 7 0 5 0 7
 Gg+BZ$k-rS
-BDFChar: 58 58 10 0 1 1 7
+BDFChar: 58 58 5 0 1 1 7
 ^q]pM!5QAM
-BDFChar: 59 59 10 0 2 0 6
+BDFChar: 59 59 6 0 2 0 6
 ?sis7?spbM
-BDFChar: 60 60 10 0 5 1 5
+BDFChar: 60 60 9 0 5 1 5
 *,r]4)uos=
-BDFChar: 61 61 10 0 5 2 5
+BDFChar: 61 61 9 0 5 2 5
 qu?`p
-BDFChar: 62 62 10 0 5 1 5
+BDFChar: 62 62 9 0 5 1 5
 i&D-)huE`W
-BDFChar: 63 63 10 0 6 0 8
-I)a/7(`35i(]XO9
-BDFChar: 64 64 10 0 7 0 8
-I`'(LgY:#hIfKHK
-BDFChar: 65 65 10 0 8 0 7
+BDFChar: 63 63 10 0 6 0 7
+`l8E((]YBi
+BDFChar: 64 64 11 0 7 0 7
+_o'gTgWmTa
+BDFChar: 65 65 12 0 8 0 7
 4ocQ&'EC#k4occ,@fZ7R
-BDFChar: 66 66 9 0 7 0 7
+BDFChar: 66 66 11 0 7 0 7
 pgdoaB4GHN
-BDFChar: 67 67 8 0 6 0 7
+BDFChar: 67 67 10 0 6 0 7
 3bC^o^qs\E
-BDFChar: 68 68 10 0 8 0 7
+BDFChar: 68 68 12 0 8 0 7
 rW%!>@=Vd:@=Vd:Erc1>
-BDFChar: 69 69 8 0 6 0 7
+BDFChar: 69 69 10 0 6 0 7
 raKPcBOYTQ
 BDFChar: 70 70 10 0 6 0 7
 raKPcBOG6;
-BDFChar: 71 71 9 0 7 0 7
+BDFChar: 71 71 11 0 7 0 7
 3bC^oa22:M
-BDFChar: 72 72 10 0 8 0 7
+BDFChar: 72 72 12 0 8 0 7
 pOH`R@fUuY@fU!=@fZ7R
-BDFChar: 73 73 5 0 3 0 7
+BDFChar: 73 73 7 0 3 0 7
 n6fX3?smC3
-BDFChar: 74 74 8 0 6 0 7
+BDFChar: 74 74 10 0 6 0 7
 *XiGc%*[LO
-BDFChar: 75 75 10 0 8 0 7
+BDFChar: 75 75 12 0 8 0 7
 pOH`RAcR2YAcQ<@@fZ7R
-BDFChar: 76 76 8 0 6 0 7
+BDFChar: 76 76 10 0 6 0 7
 n6fX3?t*aI
-BDFChar: 77 77 11 0 9 0 7
+BDFChar: 77 77 13 0 9 0 7
 iP9MbIt2BdD1H&F@=[sb
-BDFChar: 78 78 10 0 8 0 7
+BDFChar: 78 78 12 0 8 0 7
 kC@%BEr^OeDZFDM@fZ+N
-BDFChar: 79 79 9 0 7 0 7
+BDFChar: 79 79 11 0 7 0 7
 4D$pt_o$(K
-BDFChar: 80 80 8 0 6 0 7
+BDFChar: 80 80 10 0 6 0 7
 r+9PQHsg@O
-BDFChar: 81 81 10 0 7 -1 7
-4D$ptbL^>i!rr<$
-BDFChar: 82 82 10 0 7 0 7
+BDFChar: 81 81 11 0 7 0 7
+4D$ptbL^>i
+BDFChar: 82 82 11 0 7 0 7
 r+9PQHtI!b
-BDFChar: 83 83 8 0 6 0 7
+BDFChar: 83 83 10 0 6 0 7
 HH*aJ%`[YD
-BDFChar: 84 84 8 0 7 0 7
+BDFChar: 84 84 11 0 7 0 7
 s-X]@(`4)P
-BDFChar: 85 85 10 0 8 0 7
+BDFChar: 85 85 12 0 8 0 7
 pOH`R@fU!=@fU!=2?5o@
-BDFChar: 86 86 10 0 8 0 7
+BDFChar: 86 86 12 0 8 0 7
 pOH`R@fU]Q2?5o@)uprY
-BDFChar: 87 87 11 0 9 0 7
+BDFChar: 87 87 13 0 9 0 7
 o>"db@=W3FIt2Tj@=Z//
-BDFChar: 88 88 9 0 7 0 7
+BDFChar: 88 88 11 0 7 0 7
 s(5k*4D&4*
-BDFChar: 89 89 10 0 8 0 7
+BDFChar: 89 89 12 0 8 0 7
 pOH`RG5sf,)uprY)ur/&
-BDFChar: 90 90 9 0 7 0 7
+BDFChar: 90 90 11 0 7 0 7
 s2L!70O_m!
-BDFChar: 91 91 10 0 3 -1 8
-nA)iT^qdb$_!h=(
-BDFChar: 92 92 10 0 5 0 8
-^qa>c0GkW8$ig8-
-BDFChar: 93 93 10 0 3 -1 8
-n1ZOM0JG170^o&B
-BDFChar: 94 94 10 0 6 7 10
+BDFChar: 91 91 7 0 3 0 5
+nA)iT^q]pM
+BDFChar: 92 92 8 0 4 0 5
+^qa>c0Gjci
+BDFChar: 93 93 7 0 3 0 5
+n1ZOM0JEJ,
+BDFChar: 94 94 10 0 6 4 7
 &3+LG
-BDFChar: 95 95 10 0 6 -2 -2
-rVuou
-BDFChar: 96 96 10 0 2 8 10
-^qa=X
-BDFChar: 97 97 10 0 5 0 5
-GRSuDb^9Bj
-BDFChar: 98 98 10 0 5 0 8
-^qdbTfZ_R`p](9o
-BDFChar: 99 99 10 0 5 0 5
-Gg*t=b]j*f
-BDFChar: 100 100 10 0 5 0 8
-$k*P,Cs:,IHiO-H
-BDFChar: 101 101 10 0 5 0 5
-Gg-*$b]j*f
-BDFChar: 102 102 10 0 5 0 8
-3,Du1n6fX3?iU0,
-BDFChar: 103 103 10 0 5 -3 5
-Cu!7Yb^9iCGQ7^D
-BDFChar: 104 104 10 0 5 0 8
-^qdb<m**\tbQ%VC
-BDFChar: 105 105 10 0 1 0 8
-^q]rc^qdb$^]4?7
-BDFChar: 106 106 10 0 4 -2 8
-(`364(`4),f[t-C
-BDFChar: 107 107 10 0 5 0 8
-^qdb0f^RP;bQ%VC
-BDFChar: 108 108 10 0 1 0 8
-^qdb$^qdb$^]4?7
-BDFChar: 109 109 10 0 7 0 5
-k5X2jgY2].
-BDFChar: 110 110 10 0 5 0 5
-f^-i+bfg%e
-BDFChar: 111 111 10 0 5 0 5
-Gg+CUb]j*f
-BDFChar: 112 112 10 0 5 -3 5
-f^-i+bkSuh^]4?7
-BDFChar: 113 113 10 0 6 -3 5
-Cu!7Yb^9g-%KHJ/
-BDFChar: 114 114 10 0 5 0 5
-f^-ht^q]pM
-BDFChar: 115 115 10 0 5 0 5
-Gg'P4b]j*f
-BDFChar: 116 116 10 0 3 0 8
-?smC3?smAM0E;(Q
-BDFChar: 117 117 10 0 5 0 5
-bfn;TghZrj
-BDFChar: 118 118 10 0 6 0 5
-`l;h23"Q&i
-BDFChar: 119 119 10 0 7 0 5
-_o(6`s(262
-BDFChar: 120 120 10 0 6 0 5
-`b[UoCrQGT
-BDFChar: 121 121 10 0 5 -3 5
-bfn;Tb^9g9Du]k<
-BDFChar: 122 122 10 0 4 0 5
-p_Y\m_"[m0
-BDFChar: 123 123 10 0 4 -1 9
-3+--%@)-/X?skqo
-BDFChar: 124 124 10 0 1 -1 8
-^qdb$^qdb$^q]pM
-BDFChar: 125 125 10 0 4 -1 9
-i%Qi=0GlJt0JMDb
-BDFChar: 126 126 10 0 6 4 5
-G2*&t
-BDFChar: 127 127 10 0 8 2 5
-G6#m<fmn8H
-BDFChar: 128 128 10 0 6 0 8
-*&:ps@/++b)uos=
-BDFChar: 129 129 10 0 6 0 6
-rbQCeCi!nf
-BDFChar: 130 130 10 0 2 -2 1
-i*]s.
-BDFChar: 131 131 10 0 5 0 5
-Gf4R:b]j*f
-BDFChar: 132 132 10 0 5 -2 1
-r+p3%
-BDFChar: 133 133 10 0 6 0 5
-G0J1Sb]Wsd
-BDFChar: 134 134 10 0 5 2 9
-0JNDY0JG17
-BDFChar: 135 135 10 0 5 2 9
-0JNDY0`3UY
-BDFChar: 136 136 10 0 6 0 8
-rkQ=b^qdb$^]4?7
-BDFChar: 137 137 10 0 8 0 8
-bQ,ie(]YBQ0E>J\?i\H%c%#co
-BDFChar: 138 138 10 0 6 0 10
-CcDuR`l;s;`l<B+
-BDFChar: 139 139 10 0 3 2 6
-0OV\(0E;(Q
-BDFChar: 140 140 10 0 10 0 8
-5N$,R`W4!Ya2#[p`W0TN5MuMA
-BDFChar: 141 141 10 0 6 0 8
-rkMnq(bf@5rVuou
-BDFChar: 142 142 10 0 7 0 10
-2B3#&!sT/N0OXn\
-BDFChar: 143 143 10 0 7 -3 5
-cJ.+.gO9tV(]XO9
-BDFChar: 144 144 10 0 6 0 8
-rl2st`l?$<`W,u=
-BDFChar: 145 145 10 0 2 6 9
-@)0S9
-BDFChar: 146 146 10 0 2 6 9
-i*]s.
-BDFChar: 147 147 10 0 5 6 9
-CtRD<
-BDFChar: 148 148 10 0 5 6 9
-r+p3%
-BDFChar: 149 149 10 0 3 2 5
-@.<Yn
-BDFChar: 150 150 10 0 4 3 3
-p](9o
-BDFChar: 151 151 10 0 7 3 3
-rr<$!
-BDFChar: 152 152 10 0 6 -3 5
-`l;h23&iTG0E;(Q
-BDFChar: 153 153 10 0 5 -3 8
-pgCnQGeh,1GRP!?
-BDFChar: 154 154 10 0 5 0 9
-b]kfAGg'P4b]j*f
-BDFChar: 155 155 10 0 3 2 6
-^gJj(^]4?7
-BDFChar: 156 156 10 0 9 0 5
-It5bYcbRa)beS^Y
-BDFChar: 157 157 10 0 7 0 5
-J'?-\b]j*f
-BDFChar: 158 158 10 0 4 0 9
-fPhr5p_Y\m_"[m0
-BDFChar: 159 159 10 0 7 0 10
-AnD%\_e*LC(`4(i
-BDFChar: 160 160 10 3 3 -3 -3
+BDFChar: 95 95 10 9 9 0 0
 z
-BDFChar: 161 161 10 0 1 -1 7
-^q]rc^qdb$^]4?7
-BDFChar: 162 162 10 0 6 -2 7
-(`7YOd*U?k0JEJ,
-BDFChar: 163 163 10 0 7 0 9
-4D&&1n6fX3oA0HI
-BDFChar: 164 164 10 0 7 2 7
-_gWjVI_u-c
-BDFChar: 165 165 10 0 7 0 8
-4D)LK_o$(uk5YJ^
-BDFChar: 166 166 10 0 7 0 5
-B#EBXs(262
-BDFChar: 167 167 10 0 6 -2 9
-I)]PRCrXJ23"3fS
-BDFChar: 168 168 10 0 6 0 8
-3&k_jCrXK7`W,u=
-BDFChar: 169 169 10 0 5 -3 5
-f^-i+bfgJ($ig8-
-BDFChar: 170 170 10 0 5 3 9
+BDFChar: 96 96 6 0 2 5 7
+^qa=X
+BDFChar: 97 97 8 0 4 0 2
+n/1p#
+BDFChar: 98 98 9 0 5 0 5
+^qdbTfZX<q
+BDFChar: 99 99 9 0 5 0 2
+Gg*r'
+BDFChar: 100 100 9 0 5 0 5
+$k*P,Cs2kZ
+BDFChar: 101 101 9 0 5 0 2
+Gg-'c
+BDFChar: 102 102 9 0 5 0 5
+3,Du1n6c4r
+BDFChar: 103 103 9 0 5 0 2
+Cu!57
+BDFChar: 104 104 9 0 5 0 5
+^qdb<m*#G0
+BDFChar: 105 105 5 0 1 0 5
+^q]rc^q]pM
+BDFChar: 106 106 6 0 2 0 5
+?sium?sis7
+BDFChar: 107 107 9 0 5 0 5
+^qdb0f^Jk@
+BDFChar: 108 108 5 0 1 0 5
+^qdb$^q]pM
+BDFChar: 109 109 11 0 7 0 2
+k5X09
+BDFChar: 110 110 9 0 5 0 2
+f^-f^
+BDFChar: 111 111 9 0 5 0 2
+Gg+A3
+BDFChar: 112 112 9 0 5 0 2
+f^-f^
+BDFChar: 113 113 9 0 5 0 2
+Cu!57
+BDFChar: 114 114 9 0 5 0 2
+f^-f^
+BDFChar: 115 115 9 0 5 0 2
+Gg'Oq
+BDFChar: 116 116 7 0 3 0 5
+?smC3?sis7
+BDFChar: 117 117 9 0 5 0 2
+bfn92
+BDFChar: 118 118 10 0 6 0 2
+`l;fp
+BDFChar: 119 119 11 0 7 0 2
+_o(4/
+BDFChar: 120 120 10 0 6 0 2
+`b[U7
+BDFChar: 121 121 9 0 5 0 2
+bfn92
+BDFChar: 122 122 8 0 4 0 2
+p_Y[b
+BDFChar: 123 123 8 0 4 0 6
+3+--%@)-.M
+BDFChar: 124 124 5 0 1 0 5
+^qdb$^q]pM
+BDFChar: 125 125 8 0 4 0 6
+i%Qi=0GlJD
+BDFChar: 126 126 10 0 6 1 2
+G2*&t
+BDFChar: 127 127 12 0 8 0 2
+G6#m<fmj&&
+BDFChar: 128 128 10 0 6 0 5
+*&:ps@/'^%
+BDFChar: 129 129 10 0 6 0 3
+rbQCe
+BDFChar: 130 130 10 9 9 0 0
+z
+BDFChar: 131 131 9 0 5 0 2
+Gf4P$
+BDFChar: 132 132 10 9 9 0 0
+z
+BDFChar: 133 133 10 0 6 0 2
+G0J/1
+BDFChar: 134 134 9 0 5 0 6
+0JNDY0JG0\
+BDFChar: 135 135 9 0 5 0 6
+0JNDY0`3U)
+BDFChar: 136 136 10 0 6 0 5
+rkQ=b^q]pM
+BDFChar: 137 137 9 0 5 0 5
+bfgn@0OOk\
+BDFChar: 138 138 10 0 6 0 7
+CcDuR`l;s;
+BDFChar: 139 139 7 0 3 0 3
+0OV\(
+BDFChar: 140 140 13 0 9 0 5
+5JUk2`W4!Ya2#[p
+BDFChar: 141 141 10 0 6 0 5
+rkMnq(bbpi
+BDFChar: 142 142 11 0 7 0 7
+2B3#&!sT/N
+BDFChar: 143 143 11 0 7 0 2
+cJ.(R
+BDFChar: 144 144 10 0 6 0 5
+rl2st`l7uY
+BDFChar: 145 145 6 0 2 3 6
+@)0S9
+BDFChar: 146 146 6 0 2 3 6
+i*]s.
+BDFChar: 147 147 9 0 5 3 6
+CtRD<
+BDFChar: 148 148 9 0 5 3 6
+r+p3%
+BDFChar: 149 149 7 0 3 0 2
+@.<Xc
+BDFChar: 150 150 8 0 4 0 0
+p](9o
+BDFChar: 151 151 11 0 7 0 0
+rr<$!
+BDFChar: 152 152 10 0 6 0 2
+`l;fp
+BDFChar: 153 153 8 0 4 0 5
+pgCnQGea:Z
+BDFChar: 154 154 9 0 5 0 6
+b]kfAGg'Oq
+BDFChar: 155 155 7 0 3 0 3
+^gJj(
+BDFChar: 156 156 13 0 9 0 2
+It5bYcbKM\
+BDFChar: 157 157 11 0 7 0 2
+J'?+:
+BDFChar: 158 158 8 0 4 0 6
+fPhr5p_Y[b
+BDFChar: 159 159 11 0 7 0 7
+AnD%\_e*LC
+BDFChar: 160 160 10 9 9 0 0
+z
+BDFChar: 161 161 5 0 1 0 4
+^q]rc^]4?7
+BDFChar: 162 162 10 0 6 0 4
+(`7YOci=%G
+BDFChar: 163 163 10 0 6 0 6
+4D&&1n6fW(
+BDFChar: 164 164 11 0 7 0 4
+_gWjVIK0?J
+BDFChar: 165 165 11 0 7 0 5
+4D)LK_nuHS
+BDFChar: 166 166 11 0 7 0 2
+B#E@'
+BDFChar: 167 167 10 0 6 0 6
+I)]PRCrXHp
+BDFChar: 168 168 10 0 6 0 5
+3&k_jCrQGT
+BDFChar: 169 169 9 0 5 0 2
+f^-f^
+BDFChar: 170 170 9 0 5 0 6
 GRSuDHiX'E
-BDFChar: 171 171 10 0 6 2 6
-2Jh#^2?3^W
-BDFChar: 172 172 10 0 5 1 4
-r!WuB
-BDFChar: 173 173 10 0 5 4 4
+BDFChar: 171 171 10 0 6 0 3
+2Jh#^
+BDFChar: 172 172 9 0 5 0 1
+r!WQ*
+BDFChar: 173 173 9 0 5 1 1
 qu?]s
-BDFChar: 174 174 10 0 6 0 8
-3&k_jCrXK7rVuou
-BDFChar: 175 175 10 0 5 0 8
-r*V4'bfn;TGQ7^D
-BDFChar: 176 176 10 0 5 5 9
+BDFChar: 174 174 10 0 6 0 5
+3&k_jCrQGT
+BDFChar: 175 175 9 0 5 0 5
+r*V4'bfg%e
+BDFChar: 176 176 9 0 5 2 6
 Gg+CUGQ7^D
-BDFChar: 177 177 10 0 5 0 6
-0JNDY0ED"N
-BDFChar: 178 178 10 0 3 5 9
+BDFChar: 177 177 9 0 5 0 3
+0JNDY
+BDFChar: 178 178 7 0 3 2 6
 i%SQSn,NFg
-BDFChar: 179 179 10 0 3 5 9
+BDFChar: 179 179 7 0 3 2 6
 i%X(ChuE`W
-BDFChar: 180 180 10 0 6 0 8
-I)a1Grl2stHiO-H
-BDFChar: 181 181 10 0 6 -3 5
-bfn;Tbkf,j^]4?7
-BDFChar: 182 182 10 0 7 0 8
-J(r`4HQ*nC)ZTj<
-BDFChar: 183 183 10 0 1 3 4
+BDFChar: 180 180 10 0 6 0 5
+I)a1Grl+p<
+BDFChar: 181 181 9 0 5 0 2
+bfn92
+BDFChar: 182 182 11 0 7 0 5
+J(r`4HQ)qb
+BDFChar: 183 183 5 0 1 0 1
 ^q]pM
-BDFChar: 184 184 10 0 6 0 8
-E,ZX24D\iR`W,u=
-BDFChar: 185 185 10 0 3 5 9
+BDFChar: 184 184 8 0 4 0 5
+i8?:CGh;ur
+BDFChar: 185 185 7 0 3 2 6
 @,PF#n,NFg
-BDFChar: 186 186 10 0 5 3 9
+BDFChar: 186 186 9 0 5 0 6
 Gg+CUGQ@XA
-BDFChar: 187 187 10 0 6 2 6
-fPEH^fDkmO
-BDFChar: 188 188 10 0 7 -2 9
-@,PO,C`"jQgCFAg
-BDFChar: 189 189 10 0 7 -2 9
-@,PO,C`"jD_ZgM[
-BDFChar: 190 190 10 0 7 -2 9
-i%SY!lkhF'gCFAg
-BDFChar: 191 191 10 0 6 -1 7
-0JEJ\0OVo?HiO-H
-BDFChar: 192 192 10 0 6 0 10
-0GjdL3,EENrl2qX
-BDFChar: 193 193 10 0 6 0 10
-(bbqL3,EENrl2qX
-BDFChar: 194 194 10 0 6 0 10
-3,HSo3,EENrl2qX
-BDFChar: 195 195 10 0 6 0 10
-G2*'W3,EENrl2qX
-BDFChar: 196 196 10 0 6 0 10
-Chs)23,EENrl2qX
-BDFChar: 197 197 10 0 6 0 10
-3,CPc3,EENrl2qX
-BDFChar: 198 198 10 0 10 0 8
-+5f$W2?7=hB>Arr`W4!Ya5?pt
-BDFChar: 199 199 10 0 6 -3 8
-4D)IG^qdg!4;\Jd
-BDFChar: 200 200 10 0 6 0 10
-?n`DtrkQ>I^qfpL
-BDFChar: 201 201 10 0 6 0 10
-(bf=trkQ>I^qfpL
-BDFChar: 202 202 10 0 6 0 10
-0R1eArkQ>I^qfpL
-BDFChar: 203 203 10 0 6 0 10
-`l8#X^qfl`^qfpL
-BDFChar: 204 204 10 0 5 0 10
-?n`Dtr%KfY0JND)
-BDFChar: 205 205 10 0 5 0 10
-(bf=tr%KfY0JND)
-BDFChar: 206 206 10 0 5 0 10
-0R1eAr%KfY0JND)
-BDFChar: 207 207 10 0 5 0 9
-bfg(b0JG170`1nN
-BDFChar: 208 208 10 0 7 0 8
-HtHkuo4)9BHiO-H
-BDFChar: 209 209 10 0 7 0 10
-F3Xd'j7D$Oa2>dp
-BDFChar: 210 210 10 0 7 0 10
-0GjdPB#DO(_e)"2
-BDFChar: 211 211 10 0 7 0 10
-$lAt,B#DO(_e)"2
-BDFChar: 212 212 10 0 7 0 10
-(d)CmB#DO(_e)"2
-BDFChar: 213 213 10 0 7 0 10
-F3XbJB#DO(_e)"2
-BDFChar: 214 214 10 0 7 0 10
-AnD$*B#DO(_e)"2
-BDFChar: 215 215 10 0 6 2 6
-`b[VN`W,u=
-BDFChar: 216 216 10 0 8 -1 8
-!.[4_@fU-ADZG+aEr]\Mh>i'+
-BDFChar: 217 217 10 0 7 0 10
-0Gr!N_o'C0_e)"2
-BDFChar: 218 218 10 0 7 0 10
-$lII2_o'C0_e)"2
-BDFChar: 219 219 10 0 7 0 10
-(d)C1_o'C0_e)"2
-BDFChar: 220 220 10 0 7 0 10
-_nuJl_o'C0_e)"2
-BDFChar: 221 221 10 0 7 0 10
-$lII2AnF.B(`4(i
-BDFChar: 222 222 10 0 6 0 8
-_#23l`l?$r^]4?7
-BDFChar: 223 223 10 0 6 -1 8
-Gg+1Igs!e#gqWmi
-BDFChar: 224 224 10 0 5 0 9
-?n`DtGRSuDb^9Bj
-BDFChar: 225 225 10 0 5 0 9
-(bf=tGRSuDb^9Bj
-BDFChar: 226 226 10 0 5 0 9
-0R1eAGRSuDb^9Bj
-BDFChar: 227 227 10 0 6 0 8
-G2*(B%"-:CHiO-H
-BDFChar: 228 228 10 0 5 0 8
-bfg'3%"-:CHiO-H
-BDFChar: 229 229 10 0 5 0 9
-3,CPSGRSuDb^9Bj
-BDFChar: 230 230 10 0 9 0 5
-It.sCJ&'8.beS^Y
-BDFChar: 231 231 10 0 5 -3 5
-Gg*t=b]js5GQ7^D
-BDFChar: 232 232 10 0 5 0 9
-?n`DtGg-*$b]j*f
-BDFChar: 233 233 10 0 5 0 9
-(bf=tGg-*$b]j*f
-BDFChar: 234 234 10 0 5 0 9
-0R1eAGg-*$b]j*f
-BDFChar: 235 235 10 0 5 0 8
-bfg'3bl#9#GQ7^D
-BDFChar: 236 236 10 0 2 0 9
-JA>Om^qdb$^q]pM
-BDFChar: 237 237 10 0 2 0 9
-+CMtb^qdb$^q]pM
-BDFChar: 238 238 10 0 3 0 9
-@.96X?smAM?sis7
-BDFChar: 239 239 10 0 5 0 8
-bfg&@0JG170E;(Q
-BDFChar: 240 240 10 0 5 0 9
-csX'pGg+CUb]j*f
-BDFChar: 241 241 10 0 6 0 8
-G2*)Mm**\tbQ%VC
-BDFChar: 242 242 10 0 5 0 9
-?n`DtGg+CUb]j*f
-BDFChar: 243 243 10 0 5 0 9
-(bf=tGg+CUb]j*f
-BDFChar: 244 244 10 0 5 0 9
-0R1eAGg+CUb]j*f
-BDFChar: 245 245 10 0 6 0 8
-G2*(Bbfn;TGQ7^D
-BDFChar: 246 246 10 0 5 0 8
-bfg'3bfn;TGQ7^D
-BDFChar: 247 247 10 0 5 1 7
-0JEM)!&-),
-BDFChar: 248 248 10 0 8 -1 6
-!J!63B)liMHN8*eD?.HP
-BDFChar: 249 249 10 0 5 0 9
-?n`Dtbfn;TghZrj
-BDFChar: 250 250 10 0 5 0 9
-(bf=tbfn;TghZrj
-BDFChar: 251 251 10 0 5 0 9
-0R1eAbfn;TghZrj
-BDFChar: 252 252 10 0 5 0 8
-bfg(2bfn;dC]FG8
-BDFChar: 253 253 10 0 5 -3 9
-(bf=tbfn;Tb^9g9Du]k<
-BDFChar: 254 254 10 0 5 0 8
-^qf`hbfojt^]4?7
-BDFChar: 255 255 10 0 5 -3 8
-bfg(2bfn;THjgj2
+BDFChar: 187 187 10 0 6 0 3
+fPEH^
+BDFChar: 188 188 11 0 7 0 6
+@,PO,C`"i+
+BDFChar: 189 189 11 0 7 0 6
+@,PO,C`"i+
+BDFChar: 190 190 11 0 7 0 6
+i%SY!lkhDV
+BDFChar: 191 191 5 0 1 0 4
+^q]rc^]4?7
+BDFChar: 192 192 10 0 6 0 7
+0GjdL3,EEN
+BDFChar: 193 193 10 0 6 0 7
+(bbqL3,EEN
+BDFChar: 194 194 10 0 6 0 7
+3,HSo3,EEN
+BDFChar: 195 195 10 0 6 0 7
+G2*'W3,EEN
+BDFChar: 196 196 10 0 6 0 7
+Chs)23,EEN
+BDFChar: 197 197 10 0 6 0 7
+3,CPc3,EEN
+BDFChar: 198 198 12 0 8 0 5
+5CdPMC]MZZc[bon
+BDFChar: 199 199 10 0 6 0 5
+4D)IG^q]pM
+BDFChar: 200 200 10 0 6 0 7
+?n`DtrkQ>I
+BDFChar: 201 201 10 0 6 0 7
+(bf=trkQ>I
+BDFChar: 202 202 10 0 6 0 7
+0R1eArkQ>I
+BDFChar: 203 203 10 0 6 0 7
+`l8#X^qfl`
+BDFChar: 204 204 9 0 5 0 7
+?n`Dtr%KfY
+BDFChar: 205 205 9 0 5 0 7
+(bf=tr%KfY
+BDFChar: 206 206 9 0 5 0 7
+0R1eAr%KfY
+BDFChar: 207 207 9 0 5 0 6
+bfg(b0JG0\
+BDFChar: 208 208 11 0 7 0 5
+HtHkuo4%b#
+BDFChar: 209 209 11 0 7 0 7
+F3Xd'j7D$O
+BDFChar: 210 210 11 0 7 0 7
+0GjdPB#DO(
+BDFChar: 211 211 11 0 7 0 7
+$lAt,B#DO(
+BDFChar: 212 212 11 0 7 0 7
+(d)CmB#DO(
+BDFChar: 213 213 11 0 7 0 7
+F3XbJB#DO(
+BDFChar: 214 214 11 0 7 0 7
+AnD$*B#DO(
+BDFChar: 215 215 10 0 6 0 3
+`b[VN
+BDFChar: 216 216 11 0 7 0 5
+!IMi3hY$pL
+BDFChar: 217 217 11 0 7 0 7
+0Gr!N_o'C0
+BDFChar: 218 218 11 0 7 0 7
+$lII2_o'C0
+BDFChar: 219 219 11 0 7 0 7
+(d)C1_o'C0
+BDFChar: 220 220 11 0 7 0 7
+_nuJl_o'C0
+BDFChar: 221 221 11 0 7 0 7
+$lII2AnF.B
+BDFChar: 222 222 10 0 6 0 5
+_#23l`l7uY
+BDFChar: 223 223 10 0 6 0 5
+Gg+1Igro`u
+BDFChar: 224 224 8 0 4 0 6
+^gJhrn/1p#
+BDFChar: 225 225 8 0 4 0 6
+0OVZrn/1p#
+BDFChar: 226 226 9 0 5 0 6
+0R1eAGRSs"
+BDFChar: 227 227 10 0 6 0 5
+G2*(B%"&$T
+BDFChar: 228 228 9 0 5 0 5
+bfg'3%"&$T
+BDFChar: 229 229 8 0 4 0 6
+E7f+0n/1p#
+BDFChar: 230 230 12 0 8 0 2
+rr<pes*t(L
+BDFChar: 231 231 9 0 5 0 2
+Gg*r'
+BDFChar: 232 232 9 0 5 0 6
+?n`DtGg-'c
+BDFChar: 233 233 9 0 5 0 6
+(bf=tGg-'c
+BDFChar: 234 234 9 0 5 0 6
+0R1eAGg-'c
+BDFChar: 235 235 9 0 5 0 5
+bfg'3bkqG@
+BDFChar: 236 236 6 0 2 0 6
+JA>Om^qd_c
+BDFChar: 237 237 6 0 2 0 6
++CMtb^qd_c
+BDFChar: 238 238 7 0 3 0 6
+@.96X?sm@B
+BDFChar: 239 239 9 0 5 0 5
+bfg&@0JEJ,
+BDFChar: 240 240 9 0 5 0 6
+csX'pGg+A3
+BDFChar: 241 241 10 0 6 0 5
+G2*)Mm*#G0
+BDFChar: 242 242 9 0 5 0 6
+?n`DtGg+A3
+BDFChar: 243 243 9 0 5 0 6
+(bf=tGg+A3
+BDFChar: 244 244 9 0 5 0 6
+0R1eAGg+A3
+BDFChar: 245 245 10 0 6 0 5
+G2*(Bbfg%e
+BDFChar: 246 246 9 0 5 0 5
+bfg'3bfg%e
+BDFChar: 247 247 9 0 5 1 4
+0JEM)
+BDFChar: 248 248 11 0 7 0 3
+"*VuH
+BDFChar: 249 249 9 0 5 0 6
+?n`Dtbfn92
+BDFChar: 250 250 9 0 5 0 6
+(bf=tbfn92
+BDFChar: 251 251 9 0 5 0 6
+0R1eAbfn92
+BDFChar: 252 252 9 0 5 0 5
+bfg(2bfg%e
+BDFChar: 253 253 9 0 5 0 6
+(bf=tbfn92
+BDFChar: 254 254 9 0 5 0 5
+^qf`hbfg%e
+BDFChar: 255 255 9 0 5 0 5
+bfg(2bfg%e
 EndBitmapFont
 EndSplineFont

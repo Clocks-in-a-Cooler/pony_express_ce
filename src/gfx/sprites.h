@@ -8,6 +8,7 @@ extern "C" {
 #include "global_palette.h"
 #define sprites_palette_offset 0
 #include "envelope.h"
+#include "button.h"
 #include "rider1.h"
 #include "rider2.h"
 #include "rider4.h"

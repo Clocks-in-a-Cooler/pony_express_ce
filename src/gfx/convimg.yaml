@@ -2,6 +2,9 @@ palettes:
   - name: global_palette
     fixed-entries:
       - color: { index: 0, r: 255, g: 0, b: 255 }
+      - color: { index: 1, r: 255, g: 255, b: 255 }
+      - color: { index: 2, r: 0, g: 0, b: 0 }
+      - color: { index: 3, r: 255, g: 255, b: 0 }
     images: automatic
 
 converts:
@@ -10,6 +13,7 @@ converts:
     transparent-color-index: 0
     images:
       - envelope.png
+      - button.png
       - rider1.png
       - rider2.png
       - rider4.png

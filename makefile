@@ -19,7 +19,10 @@ endif
 
 include $(CEDEV)/meta/makefile.mk
 
-$(OBJDIR)/font.src: $(SRCDIR)/font/oldie_font.inc $(SRCDIR)/font/font.c
+# these don't seem to work
 
-$(SRCDIR)/font/oldie_font.inc: $(SRCDIR)/font/oldie-13.fnt
-	convfont -o carray -f $< $@
+# $(OBJDIR)/font.c.src: $(SRCDIR)/font/oldie_font.inc $(SRCDIR)/font/font.c
+
+# $(SRCDIR)/font/oldie_font.inc: $(SRCDIR)/font/oldie-13.fnt
+# 	echo "converting font $<"
+# 	convfont -o carray -f $< $@

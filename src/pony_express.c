@@ -28,10 +28,10 @@ void update_menu() {
         return;
     }
     if (check_key(kb_KeyEnter) & KEY_RELEASED) {
-        if (!enter_key_released) {
-            enter_key_released = true;
-            return;
-        }
+        // if (!enter_key_released) {
+        //     enter_key_released = true;
+        //     return;
+        // }
 
         switch ((enum Menu_options) menu_option) {
             case PLAY:
