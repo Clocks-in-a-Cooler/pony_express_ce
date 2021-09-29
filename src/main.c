@@ -8,6 +8,7 @@ int main() {
     running = true;
     initialize_graphics();
     init_keypad();
+    init_pony_express();
 
     while (running) {
         update_keypad();
@@ -33,5 +34,6 @@ int main() {
         gfx_SwapDraw();
     }
 
+    cleanup_pony_express();
     cleanup_graphics();
 }

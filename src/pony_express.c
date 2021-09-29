@@ -13,14 +13,34 @@ struct Controls player_controls = {
     .down = kb_KeyDown
 };
 
-int score   = 0;
-long frames = 0;
+int score      = 0;
+int high_score = 0;
+long frames    = 0;
 
 #define STARTING_LANE 2
 float lane           = STARTING_LANE;
 int destination_lane = STARTING_LANE;
 
 int pose = 1;
+
+const char file_name[] = "PNYXPDAT";
+
+void init_pony_express() {
+    srandom(rtc_Time());
+
+    ti_var_t read_settings;
+    if ((read_settings = ti_Open(file_name, "r"))) {
+        ti_Read(&high_score, sizeof(int), 1, read_settings);
+    }
+
+    // anything else?
+}
+
+void cleanup_pony_express() {
+    ti_var_t write_settings = ti_Open(file_name, "w");
+    ti_Write(&high_score, sizeof(int), 1, write_settings);
+    ti_Close(write_settings);
+}
 
 void update_menu() {
     if (check_key(kb_KeyClear) & KEY_RELEASED) {
@@ -56,6 +76,10 @@ void update_menu() {
 void update_pause_menu() {
     if (check_key_released(kb_KeyClear)) {
         game_state = MENU;
+        pause_menu_option = 0;
+        if (high_score < score) {
+            high_score = score;
+        }
     }
 
     if (check_key_released(kb_KeyEnter)) {
@@ -65,8 +89,11 @@ void update_pause_menu() {
                 break;
             case EXIT_GAME:
             case PAUSE_MENU_OPTIONS_N: // shouldn't happen, but if i don't include this the compiler will complain
-                game_state = MENU;
+                game_state        = MENU;
                 pause_menu_option = 0;
+                if (high_score < score) {
+                    high_score = score;
+                }
                 break;
         }
     }

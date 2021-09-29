@@ -8,7 +8,12 @@
 #define BLACK 2
 #define YELLOW 3
 
+bool use_french = false;
+
 void initialize_graphics() {
+
+    use_french = (os_GetSystemInfo())->hardwareType;
+
     gfx_Begin();
 
     gfx_SetPalette(global_palette, sizeof_global_palette, 0);
@@ -24,9 +29,15 @@ void cleanup_graphics() {
     gfx_End();
 }
 
-char* MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
+char* EN_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
     "PLAY", "EXIT"
 };
+
+// désolée, mon français est très mal...
+char* FR_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
+    "JOUER", "SORTIR"
+};
+
 
 const gfx_sprite_t* BUTTON_SPRITE = (gfx_sprite_t*) button_data;
 
@@ -43,7 +54,8 @@ void draw_menu() {
     // don't want to overwhelm them with more unfinished projects
     gfx_FillScreen(BLACK);
     fontlib_SetCursorPosition(8, 8);
-    fontlib_DrawString("PONY EXPRESS CE");
+    fontlib_DrawString(use_french ? "LE PONY EXPRESS" : "PONY EXPRESS CE");
+    // serieusement, c'est le nom du doodle: «155e anniversaire du Pony Express (service de distribution rapide du courrier aux États-Unis)»
 
     for (int c = 0; c < MENU_OPTIONS_N; c++) {
         if (c == menu_option) {
@@ -53,7 +65,7 @@ void draw_menu() {
 
         gfx_TransparentSprite(BUTTON_SPRITE, MENU_BUTTON_X_OFFSET, MENU_BUTTON_Y_OFFSET + c * MENU_BUTTON_HEIGHT);
         fontlib_SetCursorPosition(MENU_BUTTON_X_OFFSET + MENU_LABEL_X_OFFSET, MENU_BUTTON_Y_OFFSET + c * MENU_BUTTON_HEIGHT + MENU_LABEL_Y_OFFSET);
-        fontlib_DrawString(MENU_OPTION_NAMES[c]);
+        fontlib_DrawString(use_french ? FR_MENU_OPTION_NAMES[c] : EN_MENU_OPTION_NAMES[c]);
 
         fontlib_SetForegroundColor(WHITE);
     }
@@ -61,7 +73,7 @@ void draw_menu() {
 
 const char* PAUSE_MENU_OPTION_NAMES[PAUSE_MENU_OPTIONS_N] = {
     "CONTINUE", "MENU"
-};
+}; // should be the same in french? maybe?
 
 #define PAUSE_MENU_X_PADDING 8
 #define PAUSE_MENU_Y_PADDING 4
@@ -117,6 +129,8 @@ void draw_game() {
     fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
     fontlib_DrawString("SCORE ");
     fontlib_DrawUInt(score, 3);
+    fontlib_DrawString(use_french ? "  HAUT-SCORE " : "  HIGH-SCORE ");
+    fontlib_DrawUInt(high_score, 3);
     
     // draw the background
     gfx_SetColor(0xe6);

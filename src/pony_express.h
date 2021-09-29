@@ -1,5 +1,7 @@
 #include "customize_keys.h"
 #include <math.h>
+#include <tice.h>
+#include <fileioc.h>
 
 /*
     game state, controls, and updating the game, all conveniently in one file
@@ -40,6 +42,7 @@ struct Controls {
 extern struct Controls player_controls;
 
 extern int score;
+extern int high_score;
 extern long frames;
 
 #define max(x, y) x > y ? x : y
@@ -50,6 +53,9 @@ extern long frames;
 extern float lane;
 extern int destination_lane;
 extern int pose;
+
+void init_pony_express();
+void cleanup_pony_express();
 
 void update_menu();
 void update_pause_menu();

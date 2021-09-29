@@ -1,5 +1,6 @@
 #include <graphx.h>
 #include <stdio.h>
+#include <tice.h>
 
 void initialize_graphics();
 void cleanup_graphics();
