@@ -6,6 +6,7 @@ bool running = true;
 
 enum Game_state game_state = MENU;
 int menu_option            = PLAY;
+int settings_option        = CONFIGURE_UP;
 int pause_menu_option      = CONTINUE;
 
 struct Controls player_controls = {
@@ -31,7 +32,11 @@ void init_pony_express() {
     ti_var_t read_settings;
     if ((read_settings = ti_Open(file_name, "r"))) {
         ti_Read(&high_score, sizeof(int), 1, read_settings);
+        ti_Read(&(player_controls.up), sizeof(kb_lkey_t), 1, read_settings);
+        ti_Read(&(player_controls.down), sizeof(kb_lkey_t), 1, read_settings);
     }
+
+    ti_Close(read_settings);
 
     // anything else?
 }
@@ -39,6 +44,8 @@ void init_pony_express() {
 void cleanup_pony_express() {
     ti_var_t write_settings = ti_Open(file_name, "w");
     ti_Write(&high_score, sizeof(int), 1, write_settings);
+    ti_Write(&(player_controls.up), sizeof(kb_lkey_t), 1, write_settings);
+    ti_Write(&(player_controls.down), sizeof(kb_lkey_t), 1, write_settings);
     ti_Close(write_settings);
 }
 
@@ -48,20 +55,37 @@ void update_menu() {
         return;
     }
     if (check_key(kb_KeyEnter) & KEY_RELEASED) {
-        // if (!enter_key_released) {
-        //     enter_key_released = true;
-        //     return;
-        // }
+        if (enter_key_latch) {
+            enter_key_latch = false;
+            return;
+        }
 
         switch ((enum Menu_options) menu_option) {
             case PLAY:
                 start_game();
+                break;
+            case SETTINGS:
+                start_settings();
                 break;
             case EXIT:
             case MENU_OPTIONS_N: // this one shouldn't even happen, but i have to suppress the compiler warnings
                 running = false;
                 return;
 
+        }
+    }
+    if (check_key(kb_Key2nd) & KEY_RELEASED) {
+        switch ((enum Menu_options) menu_option) {
+            case PLAY:
+                start_game();
+                break;
+            case SETTINGS:
+                start_settings();
+                break;
+            case EXIT:
+            case MENU_OPTIONS_N: // this one shouldn't even happen, but i have to suppress the compiler warnings
+                running = false;
+                return;
         }
     }
     if (check_key(kb_KeyUp) & KEY_PRESSED) {
@@ -73,16 +97,81 @@ void update_menu() {
     menu_option = menu_option < 0 ? (menu_option + MENU_OPTIONS_N) : (menu_option % MENU_OPTIONS_N);
 }
 
+void return_to_menu() {
+    game_state  = MENU;
+    menu_option = 0;
+}
+
+void start_settings() {
+    settings_option = 0;
+    game_state      = SETTINGS_MENU;
+}
+
+void update_settings() {
+    if (check_key_released(kb_KeyClear)) {
+        return_to_menu();
+        return;
+    }
+
+    if (check_key_released(kb_KeyEnter) || check_key_released(kb_Key2nd)) {
+        switch (settings_option) {
+            case CONFIGURE_UP:
+            case CONFIGURE_DOWN:
+                game_state = CONFIGURE_KEY;
+                break;
+            case LANGUAGE:
+                break;
+            case BACK:
+                game_state  = MENU;
+                menu_option = 0;
+                break;
+            case SETTINGS_OPTIONS_N:
+                break;
+        }
+    }
+
+    if (check_key_pressed(kb_KeyDown)) {
+        settings_option++;
+    }
+    if (check_key_pressed(kb_KeyUp)) {
+        settings_option--;
+    }
+
+    settings_option = settings_option < 0 ? (settings_option + SETTINGS_OPTIONS_N) : (settings_option % SETTINGS_OPTIONS_N);
+}
+
+void update_configure() {
+    switch (settings_option) {
+        case CONFIGURE_UP:
+        case CONFIGURE_DOWN:
+            ;
+            kb_lkey_t next_key = get_next_key();
+            if (next_key) {
+                if (settings_option == CONFIGURE_UP) {
+                    player_controls.up = next_key;
+                } else if (settings_option == CONFIGURE_DOWN) {
+                    player_controls.down = next_key;
+                }
+                game_state = SETTINGS_MENU;
+            }
+            break;
+        case LANGUAGE:
+        default:
+            // nothing
+            ;
+    }
+}
+
 void update_pause_menu() {
     if (check_key_released(kb_KeyClear)) {
-        game_state = MENU;
+        game_state        = MENU;
         pause_menu_option = 0;
         if (high_score < score) {
             high_score = score;
         }
     }
 
-    if (check_key_released(kb_KeyEnter)) {
+    if (check_key_released(kb_KeyEnter) || check_key_released(kb_Key2nd)) {
         switch ((enum Pause_menu_options) pause_menu_option) {
             case CONTINUE:
                 game_state = PLAYING;

@@ -18,6 +18,11 @@ void initialize_graphics() {
 
     gfx_SetPalette(global_palette, sizeof_global_palette, 0);
 
+    gfx_SetMonospaceFont(8);
+    gfx_SetTextFGColor(WHITE);
+    gfx_SetTextBGColor(BLACK);
+    gfx_SetTextTransparentColor(BLACK);
+
     fontlib_SetFont(oldie_font, 0);
     fontlib_SetForegroundColor(WHITE);
     fontlib_SetBackgroundColor(BLACK);
@@ -30,12 +35,12 @@ void cleanup_graphics() {
 }
 
 char* EN_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
-    "PLAY", "EXIT"
+    "PLAY", "OPTIONS", "EXIT"
 };
 
 // désolée, mon français est très mal...
 char* FR_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
-    "JOUER", "SORTIR"
+    "JOUER", "OPTIONS", "SORTIR"
 };
 
 
@@ -68,6 +73,92 @@ void draw_menu() {
         fontlib_DrawString(use_french ? FR_MENU_OPTION_NAMES[c] : EN_MENU_OPTION_NAMES[c]);
 
         fontlib_SetForegroundColor(WHITE);
+    }
+}
+
+const char* EN_SETTINGS_MENU_OPTION_NAMES[SETTINGS_OPTIONS_N] = {
+    "CONFIGURE UP", "CONFIGURE DOWN", "LANGUAGE", "BACK",
+};
+
+#define SETTINGS_MENU_X_OFFSET 20
+#define SETTINGS_MENU_Y_OFFSET 100
+
+void draw_settings() {
+    gfx_FillScreen(BLACK);
+    fontlib_SetCursorPosition(8, 8);
+    fontlib_DrawString("SETTINGS");
+    fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
+    fontlib_DrawString("BUILD 0");
+
+    for (int c = 0; c < SETTINGS_OPTIONS_N; c++) {
+        int draw_x = SETTINGS_MENU_X_OFFSET;
+        int draw_y = SETTINGS_MENU_Y_OFFSET + button_height * 2 * c;
+
+        if (settings_option == c) {
+            gfx_SetColor(WHITE);
+            gfx_Rectangle_NoClip(draw_x, draw_y, button_width * 2, button_height);
+
+            if (check_key_held(kb_KeyEnter) || check_key_held(kb_Key2nd)) {
+                gfx_FillRectangle_NoClip(draw_x, draw_y, button_width * 2, button_height);
+            }
+        }
+
+        fontlib_SetCursorPosition(draw_x + MENU_LABEL_X_OFFSET, draw_y + MENU_LABEL_Y_OFFSET);
+        fontlib_DrawString(EN_SETTINGS_MENU_OPTION_NAMES[c]);
+
+        draw_x += button_width / 2;
+        draw_y += button_height + MENU_LABEL_Y_OFFSET;
+        switch (c) {
+            case CONFIGURE_UP:
+                gfx_PrintStringXY("current: ", draw_x, draw_y);
+                gfx_PrintString(get_key_name(player_controls.up));
+                break;
+            case CONFIGURE_DOWN:
+                gfx_PrintStringXY("current: ", draw_x, draw_y);
+                gfx_PrintString(get_key_name(player_controls.down));
+                break;
+            case LANGUAGE:
+                gfx_PrintStringXY("current: ", draw_x, draw_y);
+                gfx_PrintString(use_french ? "FRANÇAIS" : "ENGLISH");
+                break;
+            default:
+                ;
+        }
+    }
+}
+
+const char* EN_PRESS_A_KEY = "PRESS A KEY...";
+
+#define CONFIGURE_KEY_DIALOGUE_WIDTH (button_width * 2)
+#define CONFIGURE_KEY_DIALOGUE_HEIGHT (MENU_BUTTON_HEIGHT * 2)
+#define CONFIGURE_KEY_LABEL_X_OFFSET MENU_LABEL_X_OFFSET
+#define CONFIGURE_KEY_LABEL_Y_OFFSET ((CONFIGURE_KEY_DIALOGUE_HEIGHT - 8) / 2)
+#define CONFIGURE_KEY_X_OFFSET ((LCD_WIDTH - CONFIGURE_KEY_DIALOGUE_WIDTH) / 2)
+#define CONFIGURE_KEY_Y_OFFSET ((LCD_HEIGHT - CONFIGURE_KEY_DIALOGUE_HEIGHT) / 2)
+
+const char* EN_SELECT_LANGUAGE = "SELECT LANGUAGE...";
+
+#define CONFIGURE_LANGUAGE_DIALOGUE_WIDTH 
+// finish
+
+void draw_configure() {
+    draw_settings();
+    switch (settings_option) {
+        case CONFIGURE_UP:
+        case CONFIGURE_DOWN:
+            gfx_SetColor(WHITE);
+            gfx_Rectangle(CONFIGURE_KEY_X_OFFSET, CONFIGURE_KEY_Y_OFFSET, CONFIGURE_KEY_DIALOGUE_WIDTH, CONFIGURE_KEY_DIALOGUE_HEIGHT);
+            gfx_SetColor(BLACK);
+            gfx_FillRectangle(CONFIGURE_KEY_X_OFFSET + 1, CONFIGURE_KEY_Y_OFFSET + 1, CONFIGURE_KEY_DIALOGUE_WIDTH - 2, CONFIGURE_KEY_DIALOGUE_HEIGHT - 2);
+            if (frames % 50 > 25) {
+                fontlib_SetCursorPosition(CONFIGURE_KEY_X_OFFSET + CONFIGURE_KEY_LABEL_X_OFFSET, CONFIGURE_KEY_Y_OFFSET + CONFIGURE_KEY_LABEL_Y_OFFSET);
+                fontlib_DrawString(EN_PRESS_A_KEY);
+            }
+            break;
+        case LANGUAGE:
+        default:
+            // nothing
+            ;
     }
 }
 
@@ -117,6 +208,10 @@ unsigned char* rider_sprites[5] = {
     rider10_data,
 };
 
+#define LANE_HEIGHT     40
+#define LANE_Y_OFFSET   20
+#define LANE_TOP_MARGIN 1
+
 void draw_game() {
     gfx_FillScreen(BLACK);
 
@@ -129,18 +224,18 @@ void draw_game() {
     fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
     fontlib_DrawString("SCORE ");
     fontlib_DrawUInt(score, 3);
-    fontlib_DrawString(use_french ? "  HAUT-SCORE " : "  HIGH-SCORE ");
+    fontlib_DrawString(use_french ? "  MEILLEUR " : "  HIGHSCORE ");
     fontlib_DrawUInt(high_score, 3);
     
     // draw the background
     gfx_SetColor(0xe6);
     for (int c = 0; c < MAX_LANES; c++) {
-        gfx_FillRectangle(0, 21 + 40 * c, LCD_WIDTH, 38);
+        gfx_FillRectangle(0, LANE_Y_OFFSET + LANE_TOP_MARGIN + LANE_HEIGHT * c, LCD_WIDTH, 38);
     }
 
     // draw the player
     gfx_SetTransparentColor(0);
-    int draw_y = (int) 22 + 40 * lane;
+    int draw_y = (int) LANE_Y_OFFSET + LANE_TOP_MARGIN + 1 + LANE_HEIGHT * lane;
 
     gfx_sprite_t* rider_sprite;
     switch (pose) {
@@ -169,7 +264,7 @@ void draw_game() {
     for (int c = 0; c < MAX_ENVELOPES; c++) {
         struct Envelope* e = &(envelopes[c]);
         if (!e->used) continue;
-        int draw_y = e->lane * 40 + 28;
+        int draw_y = e->lane * LANE_HEIGHT + LANE_Y_OFFSET + 8;
         if (e->phase < 3) {
             draw_y--;
         }

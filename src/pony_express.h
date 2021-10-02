@@ -11,6 +11,8 @@ extern bool running;
 
 enum Game_state {
     MENU = 0,
+    SETTINGS_MENU,
+    CONFIGURE_KEY,
     PLAYING,
     PAUSED,
     GAME_OVER,
@@ -20,11 +22,22 @@ extern enum Game_state game_state;
 
 enum Menu_options {
     PLAY = 0,
+    SETTINGS,
     EXIT,
     MENU_OPTIONS_N,
 };
 
 extern int menu_option;
+
+enum Settings_options {
+    CONFIGURE_UP = 0,
+    CONFIGURE_DOWN,
+    LANGUAGE,
+    BACK,
+    SETTINGS_OPTIONS_N,
+};
+
+extern int settings_option;
 
 enum Pause_menu_options {
     CONTINUE = 0,
@@ -58,6 +71,9 @@ void init_pony_express();
 void cleanup_pony_express();
 
 void update_menu();
+void start_settings();
+void update_settings();
+void update_configure();
 void update_pause_menu();
 void start_game();
 void update_game();

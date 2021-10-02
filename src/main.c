@@ -19,6 +19,14 @@ int main() {
                 update_menu();
                 draw_menu();
                 break;
+            case SETTINGS_MENU:
+                update_settings();
+                draw_settings();
+                break;
+            case CONFIGURE_KEY:
+                update_configure();
+                draw_configure();
+                break;
             case PLAYING:
                 update_game();
                 draw_game();

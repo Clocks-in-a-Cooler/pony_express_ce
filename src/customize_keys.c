@@ -3,12 +3,13 @@
 #define KEYS_N 57
 #define to_sk_key_t(group, offset) (group << 3 | offset)
 
-bool enter_key_released = false;
+bool enter_key_latch;
 
 short keys[KEYS_N];
 
 void init_keypad() {
     memset((void*) keys, 0, KEYS_N);
+    enter_key_latch = kb_IsDown(kb_KeyEnter);
 }
 
 void update_keypad() {
