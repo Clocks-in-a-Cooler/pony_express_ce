@@ -249,6 +249,10 @@ void update_game() {
         }
     }
 
+    for (int c = 0; c < MAX_OBSTACLES; c++) {
+        update_obstacle(&obstacles[c]);
+    }
+
     if (!(frames % 4)) {
         pose = (pose + 1) % 8 + 1;
     }
@@ -257,7 +261,11 @@ void update_game() {
     // groups of envelopes? lines of envelopes?
     if (!(rand() % 2) && !(frames % ENVELOPE_FREQUENCY)) {
         int lane = rand() % MAX_LANES;
-        add_envelope(lane);
+        if (rand() % 2) {
+            add_envelope(lane);
+        } else {
+            create_boulder_obstacle(lane);
+        }
     }
 }
 

@@ -14,6 +14,7 @@ extern "C" {
 #include "rider4.h"
 #include "rider6.h"
 #include "rider10.h"
+#include "boulder.h"
 #include "french.h"
 #include "english.h"
 #include "canadian.h"

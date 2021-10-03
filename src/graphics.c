@@ -1,5 +1,6 @@
 #include "graphics.h"
 #include "pony_express.h"
+#include "obstacle.h"
 #include "envelope.h"
 #include "gfx/sprites.h"
 #include "font/font.h"
@@ -7,6 +8,7 @@
 #define WHITE 1
 #define BLACK 2
 #define YELLOW 3
+#define DUSTY_BROWN 4
 
 bool use_french = false;
 
@@ -199,6 +201,7 @@ void draw_pause_menu() {
 }
 
 #define envelope_sprite ((gfx_sprite_t*) envelope_data)
+#define boulder_sprite  ((gfx_sprite_t*) boulder_data)
 
 unsigned char* rider_sprites[5] = {
     rider1_data,
@@ -228,7 +231,7 @@ void draw_game() {
     fontlib_DrawUInt(high_score, 3);
     
     // draw the background
-    gfx_SetColor(0xe6);
+    gfx_SetColor(DUSTY_BROWN);
     for (int c = 0; c < MAX_LANES; c++) {
         gfx_FillRectangle(0, LANE_Y_OFFSET + LANE_TOP_MARGIN + LANE_HEIGHT * c, LCD_WIDTH, 38);
     }
@@ -272,5 +275,19 @@ void draw_game() {
             draw_y++;
         }
         gfx_Sprite(envelope_sprite, e->x, draw_y);
+    }
+
+    for (int c = 0; c < MAX_OBSTACLES; c++) {
+        struct Obstacle* o = &(obstacles[c]);
+        if (!o->used) continue;
+        switch (o->type) {
+            case BOULDER:
+                ;
+                struct Boulder_data* b = &(o->data.boulder);
+
+                int draw_y = b->lane * LANE_HEIGHT + LANE_Y_OFFSET + 5;
+                gfx_TransparentSprite(boulder_sprite, b->x, draw_y);
+                break;
+        }
     }
 }

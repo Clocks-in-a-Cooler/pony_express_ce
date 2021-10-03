@@ -1,4 +1,5 @@
 #include "customize_keys.h"
+#include "obstacle.h"
 #include <math.h>
 #include <tice.h>
 #include <fileioc.h>
