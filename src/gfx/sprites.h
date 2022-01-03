@@ -7,17 +7,18 @@ extern "C" {
 
 #include "global_palette.h"
 #define sprites_palette_offset 0
-#include "envelope.h"
-#include "button.h"
-#include "rider1.h"
-#include "rider2.h"
-#include "rider4.h"
-#include "rider6.h"
-#include "rider10.h"
-#include "boulder.h"
-#include "french.h"
-#include "english.h"
-#include "canadian.h"
+#include "envelope_sprite.h"
+#include "button_sprite.h"
+#include "rider1_sprite.h"
+#include "rider2_sprite.h"
+#include "rider4_sprite.h"
+#include "rider6_sprite.h"
+#include "rider10_sprite.h"
+#include "rider11_sprite.h"
+#include "boulder_sprite.h"
+#include "french_sprite.h"
+#include "english_sprite.h"
+#include "canadian_sprite.h"
 
 #ifdef __cplusplus
 }

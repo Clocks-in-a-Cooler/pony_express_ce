@@ -18,6 +18,8 @@ int score      = 0;
 int high_score = 0;
 long frames    = 0;
 
+int collision_countdown = -1;
+
 #define STARTING_LANE 2
 float lane           = STARTING_LANE;
 int destination_lane = STARTING_LANE;
@@ -37,6 +39,9 @@ void init_pony_express() {
     }
 
     ti_Close(read_settings);
+
+    // start the timers
+    timer_Control = TIMER1_ENABLE | TIMER1_32K | TIMER1_UP;
 
     // anything else?
 }
@@ -211,16 +216,34 @@ void start_game() {
 #define LANE_TOLERANCE 0.1
 #define LANE_SWITCH_SPEED 0.3
 
+int get_different_lane() {
+    if (destination_lane == 0) {
+        return 1;
+    }
+    if (destination_lane == MAX_LANES - 1) {
+        return MAX_LANES - 2;
+    }
+    if (rand() % 2) {
+        return destination_lane - 1;
+    } else {
+        return destination_lane + 1;
+    }
+}
+
+#define COLLISION_DURATION 40
+
 void update_game() {
     if (check_key_released(kb_KeyClear)) {
         game_state = PAUSED;
     }
 
-    if (check_key_pressed(player_controls.up)) {
-        destination_lane = destination_lane - 1;
-    }
-    if (check_key_pressed(player_controls.down)) {
-        destination_lane = destination_lane + 1;
+    if (collision_countdown < 0) {
+        if (check_key_pressed(player_controls.up)) {
+            destination_lane = destination_lane - 1;
+        }
+        if (check_key_pressed(player_controls.down)) {
+            destination_lane = destination_lane + 1;
+        }
     }
 
     // destination_lane = clamp(destination_lane, (MAX_LANES - 1), 0);
@@ -249,17 +272,30 @@ void update_game() {
         }
     }
 
-    for (int c = 0; c < MAX_OBSTACLES; c++) {
-        update_obstacle(&obstacles[c]);
-    }
-
     if (!(frames % 4)) {
         pose = (pose + 1) % 8 + 1;
     }
 
+    collision_countdown = collision_countdown < 0 ? -1 : collision_countdown - 1;
+
+    for (int c = 0; c < MAX_OBSTACLES; c++) {
+        update_obstacle(&obstacles[c]);
+        if (detect_obstacle(&(obstacles[c]), lane, PLAYER_X)) {
+            // start the collision timer
+            if (collision_countdown < 0) {
+                collision_countdown = COLLISION_DURATION;
+            }
+        }
+    }
+
+    if (collision_countdown == 0) {
+        // respawn in a different lane
+        lane = destination_lane = get_different_lane();
+    }
+
     // gotta come up with a better way to generate envelopes...
     // groups of envelopes? lines of envelopes?
-    if (!(rand() % 2) && !(frames % ENVELOPE_FREQUENCY)) {
+    if (!(rand() % 2) && !(frames % ENVELOPE_FREQUENCY) && collision_countdown < 0) {
         int lane = rand() % MAX_LANES;
         if (rand() % 2) {
             add_envelope(lane);

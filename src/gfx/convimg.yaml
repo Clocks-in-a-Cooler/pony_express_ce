@@ -13,17 +13,18 @@ converts:
     palette: global_palette
     transparent-color-index: 0
     images:
-      - envelope.png
-      - button.png
-      - rider1.png
-      - rider2.png
-      - rider4.png
-      - rider6.png
-      - rider10.png
-      - boulder.png
-      - french.png
-      - english.png
-      - canadian.png
+      - envelope_sprite.png
+      - button_sprite.png
+      - rider1_sprite.png
+      - rider2_sprite.png
+      - rider4_sprite.png
+      - rider6_sprite.png
+      - rider10_sprite.png
+      - rider11_sprite.png
+      - boulder_sprite.png
+      - french_sprite.png
+      - english_sprite.png
+      - canadian_sprite.png
 
 outputs:
   - type: c

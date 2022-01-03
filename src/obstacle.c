@@ -3,6 +3,12 @@
 
 struct Obstacle obstacles[MAX_OBSTACLES];
 
+void clear_obstacles() {
+    for (int c = 0; c < MAX_OBSTACLES; c++) {
+        obstacles[c].used = 0;
+    }
+}
+
 int get_obstacle_x(struct Obstacle* obstacle) {
     if (!obstacle->used) return -1;
     switch (obstacle->type) {
@@ -33,7 +39,7 @@ void update_obstacle(struct Obstacle* obstacle) {
         case BOULDER:
             ;
             struct Boulder_data* boulder = &(obstacle->data.boulder);
-            boulder->x                  -= MOVE_SPEED;
+            boulder->x                  -= is_moving ? MOVE_SPEED : 0;
             if (boulder->x < -BOULDER_WIDTH) {
                 obstacle->used = false;
             }

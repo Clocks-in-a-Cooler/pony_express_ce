@@ -46,7 +46,7 @@ char* FR_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
 };
 
 
-const gfx_sprite_t* BUTTON_SPRITE = (gfx_sprite_t*) button_data;
+const gfx_sprite_t* BUTTON_SPRITE = (gfx_sprite_t*) button_sprite_data;
 
 #define TEXT_HEIGHT          8
 #define MENU_BUTTON_Y_OFFSET 160
@@ -94,22 +94,22 @@ void draw_settings() {
 
     for (int c = 0; c < SETTINGS_OPTIONS_N; c++) {
         int draw_x = SETTINGS_MENU_X_OFFSET;
-        int draw_y = SETTINGS_MENU_Y_OFFSET + button_height * 2 * c;
+        int draw_y = SETTINGS_MENU_Y_OFFSET + button_sprite_height * 2 * c;
 
         if (settings_option == c) {
             gfx_SetColor(WHITE);
-            gfx_Rectangle_NoClip(draw_x, draw_y, button_width * 2, button_height);
+            gfx_Rectangle_NoClip(draw_x, draw_y, button_sprite_width * 2, button_sprite_height);
 
             if (check_key_held(kb_KeyEnter) || check_key_held(kb_Key2nd)) {
-                gfx_FillRectangle_NoClip(draw_x, draw_y, button_width * 2, button_height);
+                gfx_FillRectangle_NoClip(draw_x, draw_y, button_sprite_width * 2, button_sprite_height);
             }
         }
 
         fontlib_SetCursorPosition(draw_x + MENU_LABEL_X_OFFSET, draw_y + MENU_LABEL_Y_OFFSET);
         fontlib_DrawString(EN_SETTINGS_MENU_OPTION_NAMES[c]);
 
-        draw_x += button_width / 2;
-        draw_y += button_height + MENU_LABEL_Y_OFFSET;
+        draw_x += button_sprite_width / 2;
+        draw_y += button_sprite_height + MENU_LABEL_Y_OFFSET;
         switch (c) {
             case CONFIGURE_UP:
                 gfx_PrintStringXY("current: ", draw_x, draw_y);
@@ -131,7 +131,7 @@ void draw_settings() {
 
 const char* EN_PRESS_A_KEY = "PRESS A KEY...";
 
-#define CONFIGURE_KEY_DIALOGUE_WIDTH (button_width * 2)
+#define CONFIGURE_KEY_DIALOGUE_WIDTH (button_sprite_width * 2)
 #define CONFIGURE_KEY_DIALOGUE_HEIGHT (MENU_BUTTON_HEIGHT * 2)
 #define CONFIGURE_KEY_LABEL_X_OFFSET MENU_LABEL_X_OFFSET
 #define CONFIGURE_KEY_LABEL_Y_OFFSET ((CONFIGURE_KEY_DIALOGUE_HEIGHT - 8) / 2)
@@ -200,20 +200,22 @@ void draw_pause_menu() {
     }
 }
 
-#define envelope_sprite ((gfx_sprite_t*) envelope_data)
-#define boulder_sprite  ((gfx_sprite_t*) boulder_data)
-
-unsigned char* rider_sprites[5] = {
-    rider1_data,
-    rider2_data,
-    rider4_data,
-    rider6_data,
-    rider10_data,
+unsigned char* rider_sprites[6] = {
+    rider1_sprite_data,
+    rider2_sprite_data,
+    rider4_sprite_data,
+    rider6_sprite_data,
+    rider10_sprite_data,
+    rider11_sprite_data,
 };
 
 #define LANE_HEIGHT     40
 #define LANE_Y_OFFSET   20
 #define LANE_TOP_MARGIN 1
+
+// copying what Epsilon5 did in Hailstorm CE for the frame counter
+// why it works, i'm not sure
+// cargo cult programmming at its finest
 
 void draw_game() {
     gfx_FillScreen(BLACK);
@@ -229,6 +231,12 @@ void draw_game() {
     fontlib_DrawUInt(score, 3);
     fontlib_DrawString(use_french ? "  MEILLEUR " : "  HIGHSCORE ");
     fontlib_DrawUInt(high_score, 3);
+
+    fontlib_SetCursorPosition(2, 2);
+    fontlib_DrawString("FPS ");
+    fontlib_DrawInt(32768 / timer_1_Counter, 3);
+
+    timer_1_Counter = 0;
     
     // draw the background
     gfx_SetColor(DUSTY_BROWN);
@@ -241,25 +249,31 @@ void draw_game() {
     int draw_y = (int) LANE_Y_OFFSET + LANE_TOP_MARGIN + 1 + LANE_HEIGHT * lane;
 
     gfx_sprite_t* rider_sprite;
-    switch (pose) {
-        case 1:
-        case 2:
-            rider_sprite = (gfx_sprite_t*) rider_sprites[1];
-            break;
-        case 3:
-        case 4:
-        case 8:
-            rider_sprite = (gfx_sprite_t*) rider_sprites[2];
-            draw_y--;
-            break;
-        case 5:
-        case 6:
-        case 7:
-            rider_sprite = (gfx_sprite_t*) rider_sprites[3];
-            draw_y -= 2;
-            break;
-        default:
-            rider_sprite = (gfx_sprite_t*) rider_sprites[0];
+    if (collision_countdown > 20) {
+        rider_sprite = (gfx_sprite_t*) rider10_sprite;
+    } else if (collision_countdown > 0) {
+        rider_sprite = (gfx_sprite_t*) rider11_sprite;
+    } else {
+        switch (pose) {
+            case 1:
+            case 2:
+                rider_sprite = (gfx_sprite_t*) rider_sprites[1];
+                break;
+            case 3:
+            case 4:
+            case 8:
+                rider_sprite = (gfx_sprite_t*) rider_sprites[2];
+                draw_y--;
+                break;
+            case 5:
+            case 6:
+            case 7:
+                rider_sprite = (gfx_sprite_t*) rider_sprites[3];
+                draw_y -= 2;
+                break;
+            default:
+                rider_sprite = (gfx_sprite_t*) rider_sprites[0];
+        }
     }
     gfx_TransparentSprite(rider_sprite, PLAYER_X, draw_y);
 

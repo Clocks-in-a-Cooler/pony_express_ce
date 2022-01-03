@@ -59,6 +59,13 @@ extern int score;
 extern int high_score;
 extern long frames;
 
+extern int collision_countdown;
+
+#define COLLISION_MAX_COUNTDOWN  50
+#define COLLISION_HALF_COUNTDOWN 35
+
+#define is_moving (collision_countdown < 0 || collision_countdown > COLLISION_HALF_COUNTDOWN)
+
 #define max(x, y) x > y ? x : y
 #define min(x, y) x < y ? x : y
 #define clamp(a, upper, lower) min(max(a, lower), upper)

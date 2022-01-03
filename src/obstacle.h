@@ -25,6 +25,8 @@ struct Obstacle {
 #define MAX_OBSTACLES 32
 extern struct Obstacle obstacles[MAX_OBSTACLES];
 
+void clear_obstacles();
+
 int get_obstacle_x(struct Obstacle* obstacle);
 int get_obstacle_lane(struct Obstacle* obstacle);
 bool detect_obstacle(struct Obstacle* obstacle, int lane, int x);

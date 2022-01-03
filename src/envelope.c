@@ -23,7 +23,7 @@ void add_envelope(int lane) {
 
 void update_envelope(struct Envelope* envelope) {
     if (envelope->used) {
-        envelope->x    -= MOVE_SPEED;
+        envelope->x    -= is_moving ? MOVE_SPEED : 0;
         if (!(frames % 4)) {
             envelope->phase = (envelope->phase + 1) % ENVELOPE_MAX_PHASE;
         }
