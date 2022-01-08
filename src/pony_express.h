@@ -55,6 +55,8 @@ struct Controls {
 
 extern struct Controls player_controls;
 
+#define OBSTACLE_PENALTY 3
+
 extern int score;
 extern int high_score;
 extern long frames;

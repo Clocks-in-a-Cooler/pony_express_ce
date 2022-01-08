@@ -208,7 +208,7 @@ void start_game() {
     lane = destination_lane = STARTING_LANE;
 
     clear_envelopes();
-    // remember to clear other obstacles, too
+    clear_obstacles();
 
     game_state = PLAYING;
 }
@@ -290,7 +290,8 @@ void update_game() {
 
     if (collision_countdown == 0) {
         // respawn in a different lane
-        lane = destination_lane = get_different_lane();
+        score -= OBSTACLE_PENALTY;
+        lane   = destination_lane = get_different_lane();
     }
 
     // gotta come up with a better way to generate envelopes...
