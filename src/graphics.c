@@ -48,7 +48,12 @@ gfx_sprite_t* get_rider_pose(int* draw_y) {
 }
 
 void draw_rider() {
-    // draw the player
+    // draw the player... maybe
+
+    if (invincibility_countdown % 18 > 9) {
+        return;
+    }
+
     gfx_SetTransparentColor(0);
     int draw_y = (int) LANE_Y_OFFSET + LANE_TOP_MARGIN + 1 + LANE_HEIGHT * lane;
 

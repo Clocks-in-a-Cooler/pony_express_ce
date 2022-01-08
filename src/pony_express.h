@@ -63,11 +63,14 @@ extern long frames;
 
 extern int collision_countdown;
 extern int start_game_countdown;
+extern int invincibility_countdown;
 
 #define COLLISION_MAX_COUNTDOWN  50
 #define COLLISION_HALF_COUNTDOWN 35
 
 #define MAX_START_GAME_COUNTDOWN 34
+
+#define MAX_INVINCIBILITY_COUNTDOWN 150
 
 #define is_moving (collision_countdown < 0 || collision_countdown > COLLISION_HALF_COUNTDOWN)
 

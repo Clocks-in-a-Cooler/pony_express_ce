@@ -18,8 +18,9 @@ int score      = 0;
 int high_score = 0;
 long frames    = 0;
 
-int collision_countdown  = -1;
-int start_game_countdown = 0;
+int collision_countdown     = -1;
+int start_game_countdown    = 0;
+int invincibility_countdown = 0;
 
 float lane           = STARTING_LANE;
 int destination_lane = STARTING_LANE;
@@ -176,8 +177,9 @@ void update_configure() {
 }
 
 void to_menu() {
-    game_state        = MENU;
-    pause_menu_option = 0;
+    game_state              = MENU;
+    pause_menu_option       = 0;
+    invincibility_countdown = 0;
     if (high_score < score) {
         high_score = score;
     }
@@ -294,10 +296,14 @@ void update_game() {
     }
 
     collision_countdown = collision_countdown < 0 ? -1 : collision_countdown - 1;
+    
+    if (invincibility_countdown > 0) {
+        invincibility_countdown--;
+    }
 
     for (int c = 0; c < MAX_OBSTACLES; c++) {
         update_obstacle(&obstacles[c]);
-        if (detect_obstacle(&(obstacles[c]), lane, PLAYER_X)) {
+        if (detect_obstacle(&(obstacles[c]), lane, PLAYER_X) && invincibility_countdown <= 0) {
             // start the collision timer
             if (collision_countdown < 0) {
                 collision_countdown = COLLISION_DURATION;
@@ -309,6 +315,8 @@ void update_game() {
         // respawn in a different lane
         score -= score > OBSTACLE_PENALTY ? OBSTACLE_PENALTY : score;
         lane   = destination_lane = get_different_lane();
+
+        invincibility_countdown = MAX_INVINCIBILITY_COUNTDOWN;
     }
 
     // gotta come up with a better way to generate envelopes...
