@@ -62,9 +62,12 @@ extern int high_score;
 extern long frames;
 
 extern int collision_countdown;
+extern int start_game_countdown;
 
 #define COLLISION_MAX_COUNTDOWN  50
 #define COLLISION_HALF_COUNTDOWN 35
+
+#define MAX_START_GAME_COUNTDOWN 34
 
 #define is_moving (collision_countdown < 0 || collision_countdown > COLLISION_HALF_COUNTDOWN)
 
@@ -72,7 +75,8 @@ extern int collision_countdown;
 #define min(x, y) x < y ? x : y
 #define clamp(a, upper, lower) min(max(a, lower), upper)
 
-#define MAX_LANES 5
+#define MAX_LANES     5
+#define STARTING_LANE 2
 extern float lane;
 extern int destination_lane;
 extern int pose;

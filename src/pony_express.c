@@ -18,15 +18,21 @@ int score      = 0;
 int high_score = 0;
 long frames    = 0;
 
-int collision_countdown = -1;
+int collision_countdown  = -1;
+int start_game_countdown = 0;
 
-#define STARTING_LANE 2
 float lane           = STARTING_LANE;
 int destination_lane = STARTING_LANE;
 
 int pose = 1;
 
 const char file_name[] = "PNYXPDAT";
+
+void update_pose() {
+    if (!(frames % 4)) {
+        pose = ++pose % 8;
+    }
+}
 
 void init_pony_express() {
     srandom(rtc_Time());
@@ -55,6 +61,8 @@ void cleanup_pony_express() {
 }
 
 void update_menu() {
+    update_pose();
+
     if (check_key(kb_KeyClear) & KEY_RELEASED) {
         running = false;
         return;
@@ -167,13 +175,20 @@ void update_configure() {
     }
 }
 
+void to_menu() {
+    game_state        = MENU;
+    pause_menu_option = 0;
+    if (high_score < score) {
+        high_score = score;
+    }
+    
+    // reset the starting lane, or weird things will happen in the menu
+    lane = destination_lane = STARTING_LANE;
+}
+
 void update_pause_menu() {
     if (check_key_released(kb_KeyClear)) {
-        game_state        = MENU;
-        pause_menu_option = 0;
-        if (high_score < score) {
-            high_score = score;
-        }
+        to_menu();
     }
 
     if (check_key_released(kb_KeyEnter) || check_key_released(kb_Key2nd)) {
@@ -182,12 +197,8 @@ void update_pause_menu() {
                 game_state = PLAYING;
                 break;
             case EXIT_GAME:
-            case PAUSE_MENU_OPTIONS_N: // shouldn't happen, but if i don't include this the compiler will complain
-                game_state        = MENU;
-                pause_menu_option = 0;
-                if (high_score < score) {
-                    high_score = score;
-                }
+            case PAUSE_MENU_OPTIONS_N:
+                to_menu();
                 break;
         }
     }
@@ -204,6 +215,9 @@ void update_pause_menu() {
 void start_game() {
     score  = 0;
     frames = 0;
+
+    start_game_countdown = MAX_START_GAME_COUNTDOWN;
+    collision_countdown  = -1;
 
     lane = destination_lane = STARTING_LANE;
 
@@ -235,6 +249,13 @@ int get_different_lane() {
 void update_game() {
     if (check_key_released(kb_KeyClear)) {
         game_state = PAUSED;
+    }
+
+    update_pose();
+
+    if (start_game_countdown) {
+        start_game_countdown--;
+        return;
     }
 
     if (collision_countdown < 0) {
@@ -272,10 +293,6 @@ void update_game() {
         }
     }
 
-    if (!(frames % 4)) {
-        pose = (pose + 1) % 8 + 1;
-    }
-
     collision_countdown = collision_countdown < 0 ? -1 : collision_countdown - 1;
 
     for (int c = 0; c < MAX_OBSTACLES; c++) {
@@ -290,7 +307,7 @@ void update_game() {
 
     if (collision_countdown == 0) {
         // respawn in a different lane
-        score -= OBSTACLE_PENALTY;
+        score -= score > OBSTACLE_PENALTY ? OBSTACLE_PENALTY : score;
         lane   = destination_lane = get_different_lane();
     }
 

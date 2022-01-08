@@ -12,6 +12,51 @@
 
 bool use_french = false;
 
+unsigned char* rider_sprites[6] = {
+    rider1_sprite_data,
+    rider2_sprite_data,
+    rider4_sprite_data,
+    rider6_sprite_data,
+    rider10_sprite_data,
+    rider11_sprite_data,
+};
+
+gfx_sprite_t* get_rider_pose(int* draw_y) {
+    if (collision_countdown > 20) {
+        return (gfx_sprite_t*) rider10_sprite;
+    } else if (collision_countdown > 0) {
+        return (gfx_sprite_t*) rider11_sprite;
+    } else {
+        switch (pose + 1) {
+            case 1:
+            case 2:
+                return (gfx_sprite_t*) rider_sprites[1];
+            case 3:
+            case 4:
+            case 8:
+                *draw_y = *draw_y - 1;
+                return (gfx_sprite_t*) rider_sprites[2];
+            case 5:
+            case 6:
+            case 7:
+                *draw_y = *draw_y - 2;
+                return (gfx_sprite_t*) rider_sprites[3];
+            default:
+                return (gfx_sprite_t*) rider_sprites[0];
+        }
+    }
+}
+
+void draw_rider() {
+    // draw the player
+    gfx_SetTransparentColor(0);
+    int draw_y = (int) LANE_Y_OFFSET + LANE_TOP_MARGIN + 1 + LANE_HEIGHT * lane;
+
+    gfx_sprite_t* rider_sprite = get_rider_pose(&draw_y);
+
+    gfx_TransparentSprite(rider_sprite, PLAYER_X, draw_y);
+}
+
 void initialize_graphics() {
 
     use_french = (os_GetSystemInfo())->hardwareType;
@@ -76,6 +121,11 @@ void draw_menu() {
 
         fontlib_SetForegroundColor(WHITE);
     }
+
+    // draw the middle starting lane and the player
+    gfx_SetColor(DUSTY_BROWN);
+    gfx_FillRectangle(0, LANE_Y_OFFSET + LANE_TOP_MARGIN + LANE_HEIGHT * STARTING_LANE, LCD_WIDTH, 38);
+    draw_rider();
 }
 
 const char* EN_SETTINGS_MENU_OPTION_NAMES[SETTINGS_OPTIONS_N] = {
@@ -200,19 +250,6 @@ void draw_pause_menu() {
     }
 }
 
-unsigned char* rider_sprites[6] = {
-    rider1_sprite_data,
-    rider2_sprite_data,
-    rider4_sprite_data,
-    rider6_sprite_data,
-    rider10_sprite_data,
-    rider11_sprite_data,
-};
-
-#define LANE_HEIGHT     40
-#define LANE_Y_OFFSET   20
-#define LANE_TOP_MARGIN 1
-
 // copying what Epsilon5 did in Hailstorm CE for the frame counter
 // why it works, i'm not sure
 // cargo cult programmming at its finest
@@ -244,38 +281,7 @@ void draw_game() {
         gfx_FillRectangle(0, LANE_Y_OFFSET + LANE_TOP_MARGIN + LANE_HEIGHT * c, LCD_WIDTH, 38);
     }
 
-    // draw the player
-    gfx_SetTransparentColor(0);
-    int draw_y = (int) LANE_Y_OFFSET + LANE_TOP_MARGIN + 1 + LANE_HEIGHT * lane;
-
-    gfx_sprite_t* rider_sprite;
-    if (collision_countdown > 20) {
-        rider_sprite = (gfx_sprite_t*) rider10_sprite;
-    } else if (collision_countdown > 0) {
-        rider_sprite = (gfx_sprite_t*) rider11_sprite;
-    } else {
-        switch (pose) {
-            case 1:
-            case 2:
-                rider_sprite = (gfx_sprite_t*) rider_sprites[1];
-                break;
-            case 3:
-            case 4:
-            case 8:
-                rider_sprite = (gfx_sprite_t*) rider_sprites[2];
-                draw_y--;
-                break;
-            case 5:
-            case 6:
-            case 7:
-                rider_sprite = (gfx_sprite_t*) rider_sprites[3];
-                draw_y -= 2;
-                break;
-            default:
-                rider_sprite = (gfx_sprite_t*) rider_sprites[0];
-        }
-    }
-    gfx_TransparentSprite(rider_sprite, PLAYER_X, draw_y);
+    draw_rider();
 
     // draw the envelopes
     for (int c = 0; c < MAX_ENVELOPES; c++) {
@@ -303,5 +309,18 @@ void draw_game() {
                 gfx_TransparentSprite(boulder_sprite, b->x, draw_y);
                 break;
         }
+    }
+
+    if (start_game_countdown) {
+        gfx_SetColor(BLACK);
+        
+        int mask_height = start_game_countdown * START_GAME_COUNTDOWN_MASK;
+
+        if (mask_height <= 0) {
+            return;
+        }
+
+        gfx_FillRectangle(0, 0, LCD_WIDTH, mask_height);
+        gfx_FillRectangle(0, (LCD_HEIGHT - mask_height), LCD_WIDTH, mask_height);
     }
 }
