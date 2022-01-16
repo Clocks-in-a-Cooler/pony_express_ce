@@ -110,9 +110,10 @@ void draw_menu() {
     // no fancy stuff for now, because TheAyeStride needs a break...
     // don't want to overwhelm them with more unfinished projects
     gfx_FillScreen(BLACK);
-    fontlib_SetCursorPosition(8, 8);
-    fontlib_DrawString(use_french ? "LE PONY EXPRESS" : "PONY EXPRESS CE");
-    // serieusement, c'est le nom du doodle: «155e anniversaire du Pony Express (service de distribution rapide du courrier aux États-Unis)»
+    
+    // had to split the splash image into two, due to its width (320)
+    gfx_TransparentSprite_NoClip(splash_h1, 0, 0);
+    gfx_TransparentSprite_NoClip(splash_h2, LCD_WIDTH / 2 - 1, 0);
 
     for (int c = 0; c < MENU_OPTIONS_N; c++) {
         if (c == menu_option) {

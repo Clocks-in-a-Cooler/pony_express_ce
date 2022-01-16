@@ -19,6 +19,8 @@ extern "C" {
 #include "french_sprite.h"
 #include "english_sprite.h"
 #include "canadian_sprite.h"
+#include "splash_h1.h"
+#include "splash_h2.h"
 
 #ifdef __cplusplus
 }

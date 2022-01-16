@@ -25,6 +25,8 @@ converts:
       - french_sprite.png
       - english_sprite.png
       - canadian_sprite.png
+      - splash_h1.png
+      - splash_h2.png
 
 outputs:
   - type: c
