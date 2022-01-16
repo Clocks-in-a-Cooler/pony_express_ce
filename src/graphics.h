@@ -11,6 +11,8 @@
 void initialize_graphics();
 void cleanup_graphics();
 
+void update_first_time();
+
 void draw_menu();
 void draw_settings();
 void draw_configure();

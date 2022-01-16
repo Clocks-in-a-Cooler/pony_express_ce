@@ -10,6 +10,8 @@
 #define YELLOW 3
 #define DUSTY_BROWN 4
 
+#define DRAW_BUFFERS_N 3
+
 bool use_french = false;
 
 unsigned char* rider_sprites[6] = {
@@ -106,14 +108,37 @@ const gfx_sprite_t* BUTTON_SPRITE = (gfx_sprite_t*) button_sprite_data;
 #define MENU_BUTTON_HEIGHT   16
 #define MENU_BUTTON_WIDTH    96
 
-void draw_menu() {
-    // no fancy stuff for now, because TheAyeStride needs a break...
-    // don't want to overwhelm them with more unfinished projects
+int first_time_drawing_menu = 2;
+
+void update_first_time() {
+    switch (game_state) {
+        case MENU:
+            if (first_time_drawing_menu) {
+                first_time_drawing_menu--;
+            }
+            break;
+        default:
+            first_time_drawing_menu = DRAW_BUFFERS_N;
+    }
+}
+
+void first_draw_menu() {
     gfx_FillScreen(BLACK);
-    
-    // had to split the splash image into two, due to its width (320)
     gfx_TransparentSprite_NoClip(splash_h1, 0, 0);
     gfx_TransparentSprite_NoClip(splash_h2, LCD_WIDTH / 2 - 1, 0);
+}
+
+void draw_menu() {
+    if (first_time_drawing_menu) {
+        gfx_FillScreen(BLACK);
+        
+        // had to split the splash image into two, due to its width (320)
+        gfx_TransparentSprite_NoClip(splash_h1, 0, 0);
+        gfx_TransparentSprite_NoClip(splash_h2, LCD_WIDTH / 2 - 1, 0);
+    } else {
+        gfx_SetColor(BLACK);
+        gfx_FillRectangle(0, 101, LCD_WIDTH, LCD_HEIGHT - 101);
+    }
 
     for (int c = 0; c < MENU_OPTIONS_N; c++) {
         if (c == menu_option) {
@@ -146,7 +171,7 @@ void draw_settings() {
     fontlib_SetCursorPosition(8, 8);
     fontlib_DrawString("SETTINGS");
     fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
-    fontlib_DrawString("BUILD 0");
+    fontlib_DrawString("BUILD 1");
 
     for (int c = 0; c < SETTINGS_OPTIONS_N; c++) {
         int draw_x = SETTINGS_MENU_X_OFFSET;

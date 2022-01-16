@@ -37,6 +37,8 @@ int main() {
                 break;
             // others to be added
         }
+        
+        update_first_time();
         frames++;
 
         gfx_SwapDraw();
