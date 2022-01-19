@@ -150,11 +150,37 @@ void update_settings() {
             case LANGUAGE:
                 break;
             case BACK:
-                game_state  = MENU;
-                menu_option = 0;
+                return_to_menu();
                 break;
             case SETTINGS_OPTIONS_N:
                 break;
+        }
+    }
+
+    if (settings_option == LANGUAGE) {
+        if (check_key_pressed(kb_KeyLeft)) {
+            // i don't want to deal with ++ and -- and the localization going out of bounds of the enum
+            // there's only three localizations, so this is okay
+            switch (get_localization()) {
+                case FRENCH:
+                    set_localization(ENGLISH);
+                    break;
+                case CANADIAN:
+                    set_localization(FRENCH);
+                    break;
+                // other cases not needed
+            }
+        }
+
+        if (check_key_pressed(kb_KeyRight)) {
+            switch (get_localization()) {
+                case ENGLISH:
+                    set_localization(FRENCH);
+                    break;
+                case FRENCH:
+                    set_localization(CANADIAN);
+                    break;
+            }
         }
     }
 

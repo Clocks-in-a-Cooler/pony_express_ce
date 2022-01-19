@@ -47,7 +47,7 @@ char* ENGLISH_LOCALIZATIONS[] = {
  * "Â"          0xc2
  * "Ã"          0xc3
  * "Ä"          0xc4
- * "Ç"          0xc7
+ * "Ç"          0xd0
  * "È"          0xc8
  * "É"          0xc9
  * "Ê"          0xca
@@ -72,6 +72,7 @@ char* ENGLISH_LOCALIZATIONS[] = {
 char SETTINGS_FRENCH[]      = { 'R', 0xc9, 'G', 'L', 'A', 'G', 'E', 'S', '\0' }; // "RÉGLAGES"
 char LANGUAGE_NAME_FRENCH[] = { 'F', 'R', 'A', 'N', 0xc7, 'A', 'I', 'S', '\0' }; // "FRANÇAIS"
 char BACK_TO_MENU_FRENCH[]  = { 'R', 'E', 'T', 'O', 'U', 'R', 'N', 'E', 'R', ' ', 0xc0, ' ', 'M', 0xc9, 'N', 'U', '\0' }; // "RETOURNER À MÉNU"
+char MENU_FRENCH[]          = { 'M', 0xc9, 'N', 'U', '\0' }; // "MÉNU"
 
 char* FRENCH_LOCALIZATIONS[] = {
     "JOUER",
@@ -90,19 +91,22 @@ char* FRENCH_LOCALIZATIONS[] = {
 
     "PAUSE",
     "CONTINUER",
-    "MÉNU",
+    MENU_FRENCH,
 
     "SCORE",
     "MEILLEUR",
 };
 
-char** CANADIAN_LOCALIZATIONS = {
-    "PLAY",
-    SETTINGS_FRENCH,
-    "EXIT",
+char SETTINGS_CANADIAN[] = { 'S', 0xc8, 'T', 'T', 'I', 'N', 'G', 'S', '\0' }; // "SÈTTINGS"
+char EXIT_CANADIAN[]     = { 0xc9, 'X', 'I', 'T', '\0' }; // "ÉXIT"
 
-    "SETTINGS",
-    "MONTER",
+char* CANADIAN_LOCALIZATIONS[] = {
+    "PLAY",
+    SETTINGS_CANADIAN,
+    EXIT_CANADIAN,
+
+    SETTINGS_CANADIAN,
+    "MONTER UP",
     "MOVE DOWN",
     "LANGUE",
     "BACK",

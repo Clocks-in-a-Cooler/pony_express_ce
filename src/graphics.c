@@ -13,8 +13,6 @@
 
 #define DRAW_BUFFERS_N 3
 
-bool use_french = false;
-
 unsigned char* rider_sprites[6] = {
     rider1_sprite_data,
     rider2_sprite_data,
@@ -63,6 +61,23 @@ void draw_rider() {
     gfx_sprite_t* rider_sprite = get_rider_pose(&draw_y);
 
     gfx_TransparentSprite(rider_sprite, PLAYER_X, draw_y);
+}
+
+void draw_localization_flag(int draw_x, int draw_y) {
+    gfx_sprite_t* flag_sprite;
+    switch (get_localization()) {
+        case ENGLISH:
+            flag_sprite = english_sprite;
+            break;
+        case FRENCH:
+            flag_sprite = french_sprite;
+            break;
+        case CANADIAN:
+            flag_sprite = canadian_sprite;
+            break;
+    }
+
+    gfx_Sprite(flag_sprite, draw_x, draw_y);
 }
 
 void initialize_graphics() {
@@ -143,23 +158,30 @@ void draw_menu() {
 #define SETTINGS_MENU_X_OFFSET 20
 #define SETTINGS_MENU_Y_OFFSET 100
 
+char language_select[] = { 0x12, ' ', ' ', ' ', ' ', 0x13, '\0' };
+
 void draw_settings() {
     gfx_FillScreen(BLACK);
     fontlib_SetCursorPosition(8, 8);
     fontlib_DrawString(get_localized_string(SETTINGS_MENU_TITLE));
     fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
-    fontlib_DrawString("BUILD 1");
+    fontlib_DrawString("BUILD 2");
 
     for (int c = 0; c < SETTINGS_OPTIONS_N; c++) {
         int draw_x = SETTINGS_MENU_X_OFFSET;
         int draw_y = SETTINGS_MENU_Y_OFFSET + button_sprite_height * 2 * c;
 
         if (settings_option == c) {
-            gfx_SetColor(WHITE);
-            gfx_Rectangle_NoClip(draw_x, draw_y, button_sprite_width * 2, button_sprite_height);
+            if (settings_option == LANGUAGE) {
+                fontlib_SetCursorPosition(draw_x + button_sprite_width, draw_y + (button_sprite_height + MENU_LABEL_Y_OFFSET) / 2 + 5);
+                fontlib_DrawString(language_select);
+            } else {
+                gfx_SetColor(WHITE);
+                gfx_Rectangle_NoClip(draw_x, draw_y, button_sprite_width * 2, button_sprite_height);
 
-            if (check_key_held(kb_KeyEnter) || check_key_held(kb_Key2nd)) {
-                gfx_FillRectangle_NoClip(draw_x, draw_y, button_sprite_width * 2, button_sprite_height);
+                if (check_key_held(kb_KeyEnter) || check_key_held(kb_Key2nd)) {
+                    gfx_FillRectangle_NoClip(draw_x, draw_y, button_sprite_width * 2, button_sprite_height);
+                }
             }
         }
 
@@ -178,8 +200,12 @@ void draw_settings() {
                 gfx_PrintString(get_key_name(player_controls.down));
                 break;
             case LANGUAGE:
-                gfx_PrintStringXY("current: ", draw_x, draw_y);
-                gfx_PrintString(get_localized_string(SETTINGS_LANGUAGE_NAME));
+                // gfx_PrintStringXY("current: ", draw_x, draw_y);
+                // gfx_PrintString(get_localized_string(SETTINGS_LANGUAGE_NAME));
+                ;
+                draw_y -= (MENU_LABEL_Y_OFFSET + button_sprite_height) / 2;
+                draw_x += button_sprite_width / 2 + 12;
+                draw_localization_flag(draw_x, draw_y);
                 break;
             default:
                 ;
