@@ -4,6 +4,7 @@
 #include "envelope.h"
 #include "gfx/sprites.h"
 #include "font/font.h"
+#include "localization.h"
 
 #define WHITE 1
 #define BLACK 2
@@ -65,9 +66,6 @@ void draw_rider() {
 }
 
 void initialize_graphics() {
-
-    use_french = (os_GetSystemInfo())->hardwareType;
-
     gfx_Begin();
 
     gfx_SetPalette(global_palette, sizeof_global_palette, 0);
@@ -87,16 +85,6 @@ void initialize_graphics() {
 void cleanup_graphics() {
     gfx_End();
 }
-
-char* EN_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
-    "PLAY", "OPTIONS", "EXIT"
-};
-
-// désolée, mon français est très mal...
-char* FR_MENU_OPTION_NAMES[MENU_OPTIONS_N] = {
-    "JOUER", "OPTIONS", "SORTIR"
-};
-
 
 const gfx_sprite_t* BUTTON_SPRITE = (gfx_sprite_t*) button_sprite_data;
 
@@ -122,12 +110,6 @@ void update_first_time() {
     }
 }
 
-void first_draw_menu() {
-    gfx_FillScreen(BLACK);
-    gfx_TransparentSprite_NoClip(splash_h1, 0, 0);
-    gfx_TransparentSprite_NoClip(splash_h2, LCD_WIDTH / 2 - 1, 0);
-}
-
 void draw_menu() {
     if (first_time_drawing_menu) {
         gfx_FillScreen(BLACK);
@@ -148,8 +130,7 @@ void draw_menu() {
 
         gfx_TransparentSprite(BUTTON_SPRITE, MENU_BUTTON_X_OFFSET, MENU_BUTTON_Y_OFFSET + c * MENU_BUTTON_HEIGHT);
         fontlib_SetCursorPosition(MENU_BUTTON_X_OFFSET + MENU_LABEL_X_OFFSET, MENU_BUTTON_Y_OFFSET + c * MENU_BUTTON_HEIGHT + MENU_LABEL_Y_OFFSET);
-        fontlib_DrawString(use_french ? FR_MENU_OPTION_NAMES[c] : EN_MENU_OPTION_NAMES[c]);
-
+        fontlib_DrawString(get_localized_string(c + MENU_OPTION_LOCALIZATION_OFFSET));
         fontlib_SetForegroundColor(WHITE);
     }
 
@@ -159,17 +140,13 @@ void draw_menu() {
     draw_rider();
 }
 
-const char* EN_SETTINGS_MENU_OPTION_NAMES[SETTINGS_OPTIONS_N] = {
-    "CONFIGURE UP", "CONFIGURE DOWN", "LANGUAGE", "BACK",
-};
-
 #define SETTINGS_MENU_X_OFFSET 20
 #define SETTINGS_MENU_Y_OFFSET 100
 
 void draw_settings() {
     gfx_FillScreen(BLACK);
     fontlib_SetCursorPosition(8, 8);
-    fontlib_DrawString("SETTINGS");
+    fontlib_DrawString(get_localized_string(SETTINGS_MENU_TITLE));
     fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
     fontlib_DrawString("BUILD 1");
 
@@ -187,7 +164,7 @@ void draw_settings() {
         }
 
         fontlib_SetCursorPosition(draw_x + MENU_LABEL_X_OFFSET, draw_y + MENU_LABEL_Y_OFFSET);
-        fontlib_DrawString(EN_SETTINGS_MENU_OPTION_NAMES[c]);
+        fontlib_DrawString(get_localized_string(SETTINGS_OPTION_LOCALIZATION_OFFSET + c));
 
         draw_x += button_sprite_width / 2;
         draw_y += button_sprite_height + MENU_LABEL_Y_OFFSET;
@@ -202,7 +179,7 @@ void draw_settings() {
                 break;
             case LANGUAGE:
                 gfx_PrintStringXY("current: ", draw_x, draw_y);
-                gfx_PrintString(use_french ? "FRANÇAIS" : "ENGLISH");
+                gfx_PrintString(get_localized_string(SETTINGS_LANGUAGE_NAME));
                 break;
             default:
                 ;
@@ -210,16 +187,12 @@ void draw_settings() {
     }
 }
 
-const char* EN_PRESS_A_KEY = "PRESS A KEY...";
-
 #define CONFIGURE_KEY_DIALOGUE_WIDTH (button_sprite_width * 2)
 #define CONFIGURE_KEY_DIALOGUE_HEIGHT (MENU_BUTTON_HEIGHT * 2)
 #define CONFIGURE_KEY_LABEL_X_OFFSET MENU_LABEL_X_OFFSET
 #define CONFIGURE_KEY_LABEL_Y_OFFSET ((CONFIGURE_KEY_DIALOGUE_HEIGHT - 8) / 2)
 #define CONFIGURE_KEY_X_OFFSET ((LCD_WIDTH - CONFIGURE_KEY_DIALOGUE_WIDTH) / 2)
 #define CONFIGURE_KEY_Y_OFFSET ((LCD_HEIGHT - CONFIGURE_KEY_DIALOGUE_HEIGHT) / 2)
-
-const char* EN_SELECT_LANGUAGE = "SELECT LANGUAGE...";
 
 #define CONFIGURE_LANGUAGE_DIALOGUE_WIDTH 
 // finish
@@ -235,7 +208,7 @@ void draw_configure() {
             gfx_FillRectangle(CONFIGURE_KEY_X_OFFSET + 1, CONFIGURE_KEY_Y_OFFSET + 1, CONFIGURE_KEY_DIALOGUE_WIDTH - 2, CONFIGURE_KEY_DIALOGUE_HEIGHT - 2);
             if (frames % 50 > 25) {
                 fontlib_SetCursorPosition(CONFIGURE_KEY_X_OFFSET + CONFIGURE_KEY_LABEL_X_OFFSET, CONFIGURE_KEY_Y_OFFSET + CONFIGURE_KEY_LABEL_Y_OFFSET);
-                fontlib_DrawString(EN_PRESS_A_KEY);
+                fontlib_DrawString(get_localized_string(SETTINGS_PRESS_KEY));
             }
             break;
         case LANGUAGE:
@@ -244,10 +217,6 @@ void draw_configure() {
             ;
     }
 }
-
-const char* PAUSE_MENU_OPTION_NAMES[PAUSE_MENU_OPTIONS_N] = {
-    "CONTINUE", "MENU"
-}; // should be the same in french? maybe?
 
 #define PAUSE_MENU_X_PADDING 8
 #define PAUSE_MENU_Y_PADDING 4
@@ -265,7 +234,7 @@ void draw_pause_menu() {
     gfx_SetColor(WHITE);
     gfx_Rectangle_NoClip(PAUSE_MENU_X_OFFSET, PAUSE_MENU_Y_OFFSET, PAUSE_MENU_WIDTH, PAUSE_MENU_HEIGHT);
     fontlib_SetCursorPosition(PAUSE_MENU_X_OFFSET + PAUSE_MENU_X_PADDING, PAUSE_MENU_Y_OFFSET + PAUSE_MENU_Y_PADDING);
-    fontlib_DrawString("PAUSED");
+    fontlib_DrawString(get_localized_string(PAUSE_MENU_TITLE));
 
     for (int c = 0; c < PAUSE_MENU_OPTIONS_N; c++) {
         if (c == pause_menu_option) {
@@ -276,7 +245,7 @@ void draw_pause_menu() {
         
         gfx_TransparentSprite_NoClip(BUTTON_SPRITE, draw_x, draw_y);
         fontlib_SetCursorPosition(draw_x + MENU_LABEL_X_OFFSET, draw_y + MENU_LABEL_Y_OFFSET);
-        fontlib_DrawString(PAUSE_MENU_OPTION_NAMES[c]);
+        fontlib_DrawString(get_localized_string(c + PAUSE_OPTION_LOCALIZATION_OFFSET));
         fontlib_SetForegroundColor(WHITE);
     }
 }
@@ -295,9 +264,12 @@ void draw_game() {
 
     // thanks, commandblockguy, LogicalJoe!
     fontlib_SetCursorPosition(8, LCD_HEIGHT - 16);
-    fontlib_DrawString("SCORE ");
+    fontlib_DrawString(get_localized_string(GAMEPLAY_SCORE));
+    fontlib_DrawGlyph(' ');
     fontlib_DrawUInt(score, 3);
-    fontlib_DrawString(use_french ? "  MEILLEUR " : "  HIGHSCORE ");
+    fontlib_DrawGlyph(' ');
+    fontlib_DrawString(get_localized_string(GAMEPLAY_HIGHSCORE));
+    fontlib_DrawGlyph(' ');
     fontlib_DrawUInt(high_score, 3);
 
     fontlib_SetCursorPosition(2, 2);

@@ -1,5 +1,6 @@
 #include "graphics.h"
 #include "pony_express.h"
+#include "localization.h"
 #include "envelope.h"
 
 bool running = true;
@@ -43,6 +44,15 @@ void init_pony_express() {
         ti_Read(&high_score, sizeof(int), 1, read_settings);
         ti_Read(&(player_controls.up), sizeof(kb_lkey_t), 1, read_settings);
         ti_Read(&(player_controls.down), sizeof(kb_lkey_t), 1, read_settings);
+
+        int localization;
+        ti_Read(&localization, sizeof(int), 1, read_settings);
+        if (!localization) {
+            localization = os_GetSystemInfo()->hardwareType == 1 ? FRENCH : ENGLISH;
+        }
+        set_localization(localization);
+    } else {
+        set_localization(os_GetSystemInfo()->hardwareType == 1 ? FRENCH : ENGLISH);
     }
 
     ti_Close(read_settings);
@@ -58,6 +68,10 @@ void cleanup_pony_express() {
     ti_Write(&high_score, sizeof(int), 1, write_settings);
     ti_Write(&(player_controls.up), sizeof(kb_lkey_t), 1, write_settings);
     ti_Write(&(player_controls.down), sizeof(kb_lkey_t), 1, write_settings);
+    
+    int localization = get_localization();
+    ti_Write(&(localization), sizeof(int), 1, write_settings);
+
     ti_Close(write_settings);
 }
 
