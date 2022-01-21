@@ -27,10 +27,17 @@ kb_lkey_t get_next_key();
 kb_lkey_t sk_key_t_to_kb_lkey_t(sk_key_t sk_code);
 sk_key_t kb_lkey_t_to_sk_key_t(kb_lkey_t kb_lcode);
 
-#define KEY_NAME_LENGTH 7
-char* KEY_NAMES[] = {
+extern char** KEY_NAMES;
+
+char UP_ARROW[]    = { 0x18, '\0' };
+char DOWN_ARROW[]  = { 0x19, '\0' };
+char LEFT_ARROW[]  = { 0x1a, '\0' };
+char RIGHT_ARROW[] = { 0x1b, '\0' };
+
+#define KEY_NAME_LENGTH 9
+char* EN_KEY_NAMES[] = {
     "",
-    // { 25, 0 }, { 26, 0 }, { 27, 0 }, { 24, 0 }, "", "",  "","", // down, left, right, up, in that order
+    // DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, UP_ARROW, "", "", "", "",
     "down",  "left",  "right",  "up",    "",      "",      "",      "",
     "enter", "+",     "-",      "*",     "/",     "^",     "clear", "",
     "(-)",   "3",     "6",      "9",     ")",     "tan",   "vars",  "",
@@ -38,6 +45,21 @@ char* KEY_NAMES[] = {
     "0",     "1",     "4",      "7",     ",",     "sin",   "apps",  "XT0n",
     "",      "sto",   "ln",     "log",   "x^2",   "x^-1",  "math",  "alpha",
     "graph", "table", "zoom",   "window","y=",    "2nd",   "mode",  "del"
+};
+
+char FR_RESOL[]  = { 'r', 0xe9, 's', 'o', 'l', '\0' }; // "résol"
+char FR_WINDOW[] = { 'f', 'e', 'n', 0xea, 't', 'r', 'e', '\0' }; // "fenêtre"
+
+char* FR_KEY_NAMES[] = {
+    "",
+    // DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW, UP_ARROW, "", "", "", "",
+    "bas",    "gauche",  "droit", "haut",    "",     "",       "",        "",
+    "entrer", "+",       "-",     "*",       "/",    "^",      "annul",   "",
+    "(-)",    "3",       "6",     "9",       ")",    "n/d",    "var",     "",
+    ".",      "2",       "5",     "8",       "(",    FR_RESOL, "prgm",    "stats",
+    "0",      "1",       "4",     "7",       ",",    "trig",   "matrice", "XT0n",
+    "",       "sto",     "ln",    "log",     "x^2",  "< >",    "math",    "alpha",
+    "graphe", "trace",   "zoom",  FR_WINDOW, "f(x)", "2nd",    "mode",    "del"
 };
 
 #define get_key_name(kb_l_code) KEY_NAMES[kb_lkey_t_to_sk_key_t(kb_l_code)]

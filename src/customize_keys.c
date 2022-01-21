@@ -1,4 +1,5 @@
 #include "customize_keys.h"
+#include <tice.h>
 
 #define KEYS_N 57
 #define to_sk_key_t(group, offset) (group << 3 | offset)
@@ -7,9 +8,13 @@ bool enter_key_latch;
 
 short keys[KEYS_N];
 
+char** KEY_NAMES;
+
 void init_keypad() {
     memset((void*) keys, 0, KEYS_N);
     enter_key_latch = kb_IsDown(kb_KeyEnter);
+
+    KEY_NAMES = (os_GetSystemInfo())->hardwareType ? FR_KEY_NAMES : EN_KEY_NAMES;
 }
 
 void update_keypad() {
