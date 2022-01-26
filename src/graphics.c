@@ -300,10 +300,19 @@ void draw_game() {
 
     fontlib_SetCursorPosition(2, 2);
     fontlib_DrawString("FPS ");
+    // i understand what this does now
+    // thanks, Zeroko!
     fontlib_DrawInt(32768 / timer_1_Counter, 3);
 
     timer_1_Counter = 0;
     
+    /*
+    from commandblockguy:
+timer_Enable(1, TIMER_32K, TIMER_NOINT, TIMER_UP);
+int fps = 32768 / timer_Get(1);
+timer_Set(1, 0);
+    */
+
     // draw the background
     gfx_SetColor(DUSTY_BROWN);
     for (int c = 0; c < MAX_LANES; c++) {

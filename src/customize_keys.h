@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifndef _CUSTOMIZE_KEYS
+#define _CUSTOMIZE_KEYS
+
 #define KEY_SEEN     1
 #define KEY_PRESSED  2
 #define KEY_HELD     3
@@ -63,3 +66,5 @@ char* FR_KEY_NAMES[] = {
 };
 
 #define get_key_name(kb_l_code) KEY_NAMES[kb_lkey_t_to_sk_key_t(kb_l_code)]
+
+#endif
